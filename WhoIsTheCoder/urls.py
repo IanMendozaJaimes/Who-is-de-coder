@@ -16,10 +16,17 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from hackaton import views
+from users import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^home/$', views.home),
-    url(r'^hackaton/preview/$', views.HackatonList.as_view(), name='hackaton-list')
+    url(r'^hackaton/preview/$', views.HackatonList.as_view(), name='hackaton-list'),
+    url(r'^user/login/$', views.login),
+    url(r'^user/signup/$', views.signup),
+    url(r'^user/registroUser/$', views.registroUser),
+    url(r'^user/loginUser/$', views.loginUser),
+    url(r'^user/coderView/$', views.coderView),
+    url(r'^user/crearCoder/$', views.crearCoder),
 ]

@@ -20,11 +20,12 @@ class Lenguaje(models.Model):
 class Reclutador(models.Model):
     empresa = models.CharField(max_length=255)
     lugarEmpresa = models.CharField(max_length=255)
-    lenguajes = models.ManyToManyField(Lenguaje)
+    primera = models.PositiveIntegerField(default=0)
     usuario = models.OneToOneField(User)
 
 
 class Organizador(models.Model):
+    primera = models.PositiveIntegerField(default=0)
     usuario = models.OneToOneField(User)
 
 
@@ -32,7 +33,8 @@ class Coder(models.Model):
     github = models.CharField(max_length=255)
     linkedin = models.CharField(max_length=255)
     nickname = models.CharField(max_length=255)
-    lugarVive = models.CharField(max_length=255)
+    lugarVive = models.CharField(max_length=255, default="")
+    primera = models.PositiveIntegerField(default=0)
 
     remoto = 'remoto'
     presencial = 'presencial'
@@ -40,8 +42,14 @@ class Coder(models.Model):
         (remoto, 'remoto'),
         (presencial, 'presencial')
     )
-
     disponibilidad = models.CharField(max_length=255, choices=dispone, default=presencial)
+
+    completo = 'completo'
+    t = (
+        (completo, 'completo'),
+        ('md', 'medio tiempo'),
+    )
+    tiempo = models.CharField(max_length=255, choices=t, default=completo)
 
     usuario = models.OneToOneField(User)
 
