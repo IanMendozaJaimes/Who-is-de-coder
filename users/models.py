@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from hackaton.models import Hackaton
+#from hackaton.models import Hackaton
 
 
 class Lenguaje(models.Model):
@@ -24,8 +24,7 @@ class Reclutador(models.Model):
     usuario = models.OneToOneField(User)
 
 
-class Organizador(models.Models):
-    hackatones = ManyToManyField(Hackaton)
+class Organizador(models.Model):
     usuario = models.OneToOneField(User)
 
 
@@ -45,3 +44,10 @@ class Coder(models.Model):
     disponibilidad = models.CharField(max_length=255, choices=dispone, default=presencial)
 
     usuario = models.OneToOneField(User)
+
+
+class Equipos(models.Model):
+    nombreEquipo = models.CharField(max_length=255)
+    nombreProyecto = models.CharField(max_length=255)
+    descripcionProyecto = models.TextField(default="None")
+    participantes = models.ManyToManyField(Coder)
