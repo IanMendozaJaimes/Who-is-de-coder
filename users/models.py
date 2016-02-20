@@ -24,8 +24,8 @@ class Reclutador(models.Model):
     usuario = models.OneToOneField(User)
 
 
-class Organizador(models.Models):
-    hackatones = ManyToManyField(Hackaton)
+class Organizador(models.Model):
+    hackatones = models.ManyToManyField(Hackaton)
     usuario = models.OneToOneField(User)
 
 
