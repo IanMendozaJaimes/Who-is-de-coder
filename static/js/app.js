@@ -10,18 +10,15 @@
           "<ul class='hack-data'>"+
             "<li class='hack-place'>:place:</li>"+
             "<li class='hack-date'>:fecha:</li>"+
-            "<li class='hack-desc'>:desc:</li>"+
           "</ul>"+
           "<span class='hack-link' id=':id_hack:'>+ :name:</span>"+
         "</div>";
 
-		var hackatones_vista=10;
-		$.get("/api/hackatones",function(data){
+		$.get("/hackaton/preview",function(data){
 			data.forEach(function(item){
-				var binding = template.replace(":name:", item.name)
-				.replace(":place:", item.place)
-				.replace(":fecha:", item.date)
-				.replace(":desc:", item.desc)
+				var binding = template.replace(":name:", item.nombreHackaton)
+				.replace(":place:", item.lugar)
+				.replace(":fecha:", item.fecha)
 				.replace(":id_hack:", item.id)
 
 				container.append($(binding).fadeIn(1500));
@@ -33,8 +30,8 @@
 		//GET info facebook + correo
 		var container = $('.user-facebook');
 		var template ="<img src=':direccion:'/>"*
-              "<h4 class=':user-name:'>Nombre</h4>"+
-              "<p class=':user-mail:'></p>";
+              "<h4 class='user-name'>:user-name:</h4>"+
+              "<p class='user-mail'>:user-mail:</p>";
 
 		$.get("/api/user", function(data){
 			data.forEach(function(item){
@@ -46,5 +43,9 @@
 			})
 		})
 	}
+<<<<<<< HEAD:templates/js/app.js
 
+=======
+	obtener_hackatones();
+>>>>>>> origin/master:static/js/app.js
 })();
