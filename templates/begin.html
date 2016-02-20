@@ -21,7 +21,9 @@
     <section class="begin-body">
       <article class="hacks">
         <h2>Ultimos Eventos</h2>
-        <div class="append-ajax-hacks"></div>
+        <div class="append-ajax-hacks">
+            {{ nombre }}
+        </div>
         <!--Inicio-->
         <div class="hack-intro">
           <h3 class="hack-name">Name</h3>
@@ -40,9 +42,8 @@
           <h2>Perfil</h2>
             <div class="user-facebook">
               <!--Inicio-->
-              <img src="" class="user-image"/>
-              <h4 class="user-name">Nombre</h4>
-              <p class="user-mail"></p>
+              <h4 class="user-name">{{nombre}}</h4>
+              <p class="user-mail">{{email}}</p>
               <!--Fin-->
             </div>
           <h2>Actividades</h2>
