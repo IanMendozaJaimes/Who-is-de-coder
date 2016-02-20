@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from users.models import Coder
 
 
-class Equipos(model.Models):
+class Equipos(models.Models):
     nombreEquipo = models.CharField(max_length=255)
     nombreProyecto = models.CharField(max_length=255)
     descripcionProyecto = models.TextField(default="None")

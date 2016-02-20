@@ -8,7 +8,7 @@ class Lenguaje(models.Model):
     indefinido = 'indefinido'
 
     objetivoTupla = (
-        (indefinido, 'indefinido')
+        (indefinido, 'indefinido'),
         ('objetos', 'orientado a objetos'),
         ('eventos', 'orientado a eventos'),
         ('hibrido', 'hibrido'),
