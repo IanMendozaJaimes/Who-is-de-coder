@@ -1,0 +1,34 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	background: #ddd url(../images/cream_pixels.png) repeat top left;
+}
+.begin-header{
+	position:absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	border-bottom: 1px solid black;
+	box-shadow: 0.5px 0.2px 0.2px black;
+}
+.begin-header h1{
+	text-align: center;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+.begin-body{
+	margin-top: 8em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.begin-body .hacks{
+	display: inline-block;
+	width: 30%;
+	background-color: white;
+}
+.begin-body .users{
+	display: inline-block;
+	width: 60%;
+	background-color: white; 
+}
