@@ -45,6 +45,11 @@
   </header>
   <section class="begin-body">
       <h1>CODERS</h1>
+      <h3>Yo soy: <p class="yo_soy"></p></h3>
+      
+      <input type="hidden" class="es_coder" value="{{escoder}}"/>
+      <input type="hidden" class="que_es" value="{{queEs}}">
+
       <form action="/user/registro" class="register" method="POST">
           <label for="Nickname">Escriba su Nickname (Es único):</label>
           <input type="text" name="Nickname" id="Nickname" placeholder="@SoyMuyCool" maxlength="255" required>
@@ -64,11 +69,13 @@
               <option value="1">Tiempo Completo</option>
               <option value="2">Medio Tiempo</option>
           </select>
-          <input type="hidden" name="Primera" id="Primera" value="1">
+          <input type="hidden" name="Primera" id="Primera" value={{}}>
           <input type="submit" id="Enviar" value="Let's Hack ;)">
       </form>
       <article class="info-users">
-
+        <h2>Información Personal</h2>
+        <p>Nickname: {{nickname}}</p>
+        <p>Nombre: {{nombre}}</p>
       </article>
       <article class="hacks">
         <h2>Ultimos Eventos</h2>

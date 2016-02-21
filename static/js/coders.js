@@ -1,9 +1,8 @@
 (function(){
-
-
+    //GET ultimos hackatones
 	var obtener_hackatones = function(){
-		//GET ultimos hackatones
 		var container = $(".append-ajax-hacks");
+        var user;
 
 		var template = "<div class='hack-intro'>"+
 		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
@@ -26,7 +25,7 @@
 		});
 	}
 
-
+    //GET API Github
     var obtener_repos=function()
     {
          var container = $(".container-apis");
@@ -59,12 +58,37 @@
             }
         );
     }
-
+    //Funcion para validar el ingreso como usuario
     function registro_datos(){
-
+        var queEs = $('.que_es').val();
+        if(queEs==1){
+            $('.container-apis').hide();
+            $('.yo_soy').text('Programador');
+        }else if(queEs==3){
+            $('.yo_soy').text('Reclutador');
+        }else if(queEs==2)
+         $('.yo_soy').text('Organizador');
     }
 
-    registro_datos();
-    obtener_hackatones();
-    obtener_repos();
+    //Funcion para ocultar el formulario
+
+    function data_form(){
+        var num_veces = $('es_coder').val();
+        if(num_veces == 1){
+            $('.register').hide();
+            user = $('#Nickname');
+            if(user!=null){
+                var repos = obtener_repos();
+            }else{
+                alert("Error");
+            }
+        }else{
+            $('.info-users').hide();
+        }
+    } 
+
+    var data = data_form();
+    var registro = registro_datos();
+    var hackatones = obtener_hackatones();
+
 })();
