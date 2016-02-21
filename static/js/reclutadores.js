@@ -19,7 +19,7 @@
 				if(item.paso!=1){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
-				.replace(":fecha:", item.fecha)
+				.replace(":fecha:", item.fecha_format)
 				.replace(":id_hack:", item.id)
 				}
 				container.append($(binding).fadeIn(1500));
@@ -44,7 +44,7 @@
 				if(item.paso==1){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
-				.replace(":fecha:", item.fecha)
+				.replace(":fecha:", item.fecha_format)
 				.replace(":id_hack:", item.id)
 				}
 				container.append($(binding).fadeIn(1500));

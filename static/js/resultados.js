@@ -18,7 +18,7 @@
 			data.forEach(function(item){
 				var binding = template.replace(":nombre-proyecto:", item.nombre)
 				.replace(":language:", item.language)
-				.replace(":fecha:", item.fecha)
+				.replace(":fecha:", item.fecha_format)
 				.replace(":id:", item.id)
 				container.append($(binding).fadeIn(1500));
 			});
