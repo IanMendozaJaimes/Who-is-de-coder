@@ -10,14 +10,14 @@
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
-			bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
+			/*bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
 			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
 				data.forEach(function(item_sponsor){
 					bind_hack += "<li>"+item_sponsor.sponsore+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
 					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a</li>"
 				});
 			})
-			bind_hack+="</ul>"
+			bind_hack+="</ul>"*/
 			console.log(bind_hack);
 			container_hackaton.append(bind_hack);
 		})
