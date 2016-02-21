@@ -93,3 +93,13 @@ class TechList(generics.ListAPIView):
         techs = equipos.tecnologias.all()
 
         return techs
+
+
+class BuscarUsuarios(generics.ListAPIView):
+    serializer_class = BuscarCoder
+
+    def get_queryset(self):
+        id = self.kwargs.get('id')
+        equipo = Equipos.objects.get(id=id)
+
+        return equipo

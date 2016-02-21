@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^find/(?P<parametro>[0-9a-zA-Z_-]+)/$', EquiposBusquedaView.as_view(), name='equipos-busqueda'),
     url(r'^user/resultadosView/$', views.resultadosView),
     url(r'^hackaton/proyecto/(?P<idProyecto>[0-9a-aA-Z_-]+)/$', views.proyecto),
+    url(r'^hackaton/equipos/BuscarUsuarios/(?P<idProyecto>[0-9a-aA-Z_-]+)/$', BuscarUsuarios),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
