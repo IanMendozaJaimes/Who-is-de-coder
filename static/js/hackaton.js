@@ -11,32 +11,37 @@
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
 			bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
-			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
-				data.forEach(function(item_sponsor){
-					bind_hack += "<li>"+item_sponsor.sponsore+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
-					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a</li>"
+			$.ajax({url:'/hackaton/'+id+'/sponsores',
+				success: function(data_sponsores){
+				data_sponsores.forEach(function(item_sponsor){
+					bind_hack += "<li>"+item_sponsor.nombre+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
+					"<li><a href='"+item_sponsor.pagina+"'>"+item_sponsor.pagina+"</a></li>";
+					console.log("Este es el maldto_--- " +bind_hack);
 				});
-			})
-			bind_hack+="</ul>"
-			console.log(bind_hack);
-			container_hackaton.append(bind_hack);
-		})
+					bind_hack+="</ul>";
+					container_hackaton.append($(bind_hack));
+			}});
+
+
+			console.log("Final_--- " +bind_hack);
+
+		});
 
 		//Hakcton project
 		var container_projects = $('.hackaton-proyectos');
 		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo :equipo:</a></h3><h4>Proyecto :proyecto:</h4><p>Descripción: :desc:</p>";
-		$.get('/hackaton/'+id'/equipo', function(data){
+		$.get('/hackaton/'+id+'/equipos', function(data){
 			var bind_projecto;
 			data.forEach(function(item_project){
 				bind_projecto= template_projects.replace(':id:', item_project.id).replace(':equipo:', item_project.nombreEquipo).replace(':proyecto:', item_project.proyectoEquipo)
 				.replace(':desc:', item_project.descripcionProyecto);
 				bind_projecto += "<ul><p>Tecnologias</p>";
 				//Tecnologias
-				$.get('', function(data_tecno){
+				/**$.get('', function(data_tecno){
 					data_tecno.forEach(function(tecno){
 						bind_projecto += "<li>"+tecno.nombre+"</li>"
 					});
-				})
+				})*/
 				bind_projecto += "</ul></div>"
 				container_projects.append($(bind_projecto).fadeIn(1200));
 			})
