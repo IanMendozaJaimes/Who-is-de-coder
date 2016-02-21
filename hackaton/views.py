@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html', {})
 
 def hackatones(request, idHackaton):
-    return render(request, 'hackaton.html', {'nombreHackaton': idHackaton})
+    return render(request, 'hackaton.html', {'idHackaton': idHackaton})
 
 
 class HackatonList(generics.ListCreateAPIView):

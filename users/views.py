@@ -9,6 +9,7 @@ from django.http import JsonResponse
 def loginView(request):
     return render(request, 'login.html', {})
 
+
 def signup(request):
     return render(request, 'registro.html', {})
 
