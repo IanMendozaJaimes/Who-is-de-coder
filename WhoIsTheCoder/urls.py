@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from hackaton.views import home, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail
+from hackaton.views import home, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail, hackatones
 from users import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^user/reclutadorView/$', views.reclutadorView),
     url(r'^user/crearCoder/$', views.crearCoder),
     url(r'^user/crearReclutador/$', views.crearReclutador),
+    url(r'^hackatones/(?P<idHackaton>[0-9a-aA-Z_-]+)/$', hackatones)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

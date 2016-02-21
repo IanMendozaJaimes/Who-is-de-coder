@@ -15,6 +15,9 @@ def home(request):
 def index(request):
     return render(request, 'index.html', {})
 
+def hackatones(request, idHackaton):
+    return render(request, 'hackaton.html', {'nombreHackaton': idHackaton})
+
 
 class HackatonList(generics.ListCreateAPIView):
     queryset = Hackaton.objects.all()
