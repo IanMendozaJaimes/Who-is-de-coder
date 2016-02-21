@@ -21,12 +21,37 @@
   <section class="begin-body">
       <h1>CODERS</h1>
       <form action="/user/registro" class="register" method="POST">
-
+          <label for="Nickname">Escriba su Nickname (Es único):</label>
+          <input type="text" name="Nickname" id="Nickname" placeholder="@SoyMuyCool" maxlength="255" required>
+          <label for="Linkedin">Nombre de usuario en Linkendin: (lo puede encontrar en )</label>
+          <input type="text" name="Linkedin" id="Linkedin" placeholder="NombreDeUsuario" maxlength="255">
+          <label for="Lugar">Escriba su lugar de residencia</label>
+          <input type="text" name="Lugar" id="Lugar" placeholder="CDMX" maxlength="100" required>
+          <label for="Presencial">Seleccione lo que mejor corresponda:</label>
+          <select name="Presencial" id="Presencial" required>
+              <option>Seleccione una opcion</option>
+              <option value="1">Trabajo Presencial</option>
+              <option value="2">Remoto</option>
+          </select>
+          <label for="Tiempo">Seleccione su disponibilidad de horario</label>
+            <select name="Tiempo" id="Tiempo" required>
+              <option>Seleccione una opcion</option>
+              <option value="1">Tiempo Completo</option>
+              <option value="2">Medio Tiempo</option>
+          </select>
+          <input type="hidden" name="Primera" id="Primera" value="1">
+          <input type="submit" id="Enviar" value="Let's Hack ;)">
       </form>
       <article class="hacks">
         <h2>Ultimos Eventos</h2>
         <div class="append-ajax-hacks">
         </div>
+      </article>
+      <article class="container-apis">
+
+      </article>
+      <article class="hacks-participacion">
+
       </article>
   </section>
   <footer class="begin-footer">
