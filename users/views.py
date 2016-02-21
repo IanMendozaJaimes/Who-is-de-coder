@@ -17,6 +17,7 @@ def registroUser(request):
     nom = request.POST['nombreName']
     email = request.POST['emailName']
     contra = request.POST['contraName']
+    nick = request.POST['nickName']
 
 #    existe = User.objects.all()
 #    si = False
@@ -25,9 +26,10 @@ def registroUser(request):
 #            si = True
 
     try:
-        user = User.objects.create_user(username=nom,  password=contra)
+        user = User.objects.create_user(username=nick,  password=contra)
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         user.email = email
+        user.first_name = nom
         user.save()
         login(request, user)
         request.quees = 0
@@ -38,7 +40,7 @@ def registroUser(request):
 
 
 def loginUser(request):
-    nom = request.POST['nombreName']
+    nom = request.POST['nickName']
     contra = request.POST['contraName']
     user = authenticate(username=nom, password=contra)
 
