@@ -7,13 +7,21 @@
 	$.get("/hackaton/proyecto/"+id,function(data){
 		var bind_proyecto = template_proyecto.replace(':nombre:',data.nombreProyecto).replace(':desc:', data.descripcionProyecto)
 		.replace(':github:', data.githubProyecto).replace(':link:', data.linkProyecto);
+		container_proyecto.append($(bind_proyecto).fadeIn(1000));
 	});
 	//GET Participants
 	var container_participant = $('.project-participants');
-	var template_participant = "<div class='participants-div'><h3>Our Team</h3>"
-
-	$.get("/hackaton/proyecto/",function(data){
-
+	var template_participant = "<div class='participants-div'><h3>Our Team</h3><ul>"
+	$.ajax({
+		url:"/hackaton/proyecto/"+id
+		success:function(data){
+			data.forEach(item_participant){
+				template_participant += "<li>"+item_participant.nickname+"</li>"
+				template_participant += "<li>"+item_participant.lugar+"</li>"	
+			}
+			template_participant += "</ul></div>"
+			container_participant.append()
+		}
 	})
 
 	//GET Commits

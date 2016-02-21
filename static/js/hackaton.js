@@ -2,19 +2,19 @@
 	function obtener_proyectos(){
 
 		//Hackaton tencology
+		var bind_hack;
 		var id = $('#id_hack').val();
 		var container_hackaton = $('.hack-data');
-		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul>";
+		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
 		$.get('/hackaton/'+id, function(data){
-			var bind_hack;
+			
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
-			bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
 			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
-				data.forEach(function(item_sponsor){
+				data_sponsores.forEach(function(item_sponsor){
 					bind_hack += "<li>"+item_sponsor.sponsore+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
-					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a</li>"
+					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a></li>"
 				});
 			})
 			bind_hack+="</ul>"
