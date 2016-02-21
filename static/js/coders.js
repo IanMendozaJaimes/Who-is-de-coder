@@ -79,16 +79,26 @@
             user = $('#Nickname');
             if(user!=null){
                 var repos = obtener_repos();
+                var container_participacion = $('.hacks-participacion');
+                var template_participacion = "<div><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p></div>"
+                nickname = $('nickname_val');
+                $.get('/hackatones/preview/'+nickname, function(data){
+                    if(data.lenght!=0){
+                        data.forEach(item){
+                            var bind = template_participacion.replace(":name:",item.name).replace(":date:", item.date)
+                            .replace(":place:", item.place).replace(":desc:",item.place);
+                            container_participacion.append($(bind).fadeIn(1500));
+                        }
+                    }else{
+                        container_participacion.append("<h4 class='noob'>No tienes particpaciones!</h4>")
+                    }
+                })
             }else{
-                alert("Error");
-            }
+                    alert("Error");
+                }
         }else{
             $('.info-users').hide();
-            var container_participacion = $('.hacks-participacion');
-            nickname = $('nickname_val');
-            $.get('/hackatones/preview/'+nickname, function(data){
 
-            })
         }
     } 
 
