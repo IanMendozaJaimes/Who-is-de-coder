@@ -1,7 +1,7 @@
 import datetime
 
 from .models import Hackaton, Sponsor
-from users.models import Equipos, Lenguaje
+from users.models import Equipos, Lenguaje, Coder
 from rest_framework import serializers
 from django.utils.timezone import now
 

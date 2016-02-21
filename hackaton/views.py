@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Hackaton
 from rest_framework import generics
 from users.models import Equipos, Coder, Lenguaje
-from .serializers import TechListSerializer, EquipoDetailSerializer, HackatonSerializer, EquipoSerializer, HackatonDetailSerializer, EquiposBusqueda, SponsorsListSerializer
+from .serializers import BuscarCoder, TechListSerializer, EquipoDetailSerializer, HackatonSerializer, EquipoSerializer, HackatonDetailSerializer, EquiposBusqueda, SponsorsListSerializer
 from django.contrib.auth.decorators  import  login_required
 # Create your views here.
 
