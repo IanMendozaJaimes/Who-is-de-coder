@@ -1,7 +1,7 @@
 (function(){
 	function obtener_proyectos(){
 		var id = $('#id_hack');
-		var container_hackaton = $('.hackaton-proyectos');
+		var container_hackaton = $('.hack-data');
 		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul>";
 		$.get('/hackaton/'+id, function(data){
 
@@ -14,14 +14,15 @@
 				template_hackatones+="<li>"+data.sponsores[i]+"</li>"
 			}
 			template_hackatones+="</ul>"
-
+			console.log(template_hackatones);
 			container_hackaton.append(template_hackatones);
 		})
 
 
+		var container_projects = $('.hackaton-proyectos');
 		$.get('/hackaton/'+id, function(data){
-				$.get(""+data.equipazo,function(data){
-					
+				$.get(""+data.equipazo,function(data_proyecto){
+
 				})
 			}
 		})
