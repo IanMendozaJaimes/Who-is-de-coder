@@ -20,27 +20,14 @@
   </header>
   <section class="begin-body">
     <article class="project-info">
-      <p>{{Nombre}}</p>
-      <p>{{Proyecto}}</p>
-      <p>{{Descripcion}}</p>
-      <p id="github">{{github}}</p>
-      <p id="url">{{url}}</p>
+      <input type="hidden" id="id_proyecto" value="{{idProyecto}}"/>
+      <!--Proyecto-->
     </article>
     <article class="project-participants">
       <!--Participants-->
-      <ul>
-      {% for participant in participantes %}
-      <li>participant</li>
-      {% endfor %}
-      </ul>
     </article>
     <article class="project-tecnologies">
       <!--Tecnologias-->
-      <ul>
-      {% for tecno in tecnologias %}
-      <li>tecno</li>
-      {% endfor %}
-      </ul>
     </article>
     <article class="project-commits">
       <!--Commits Github-->
