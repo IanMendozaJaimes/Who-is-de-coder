@@ -10,10 +10,11 @@
 
 			template_hackatones+="<ul><p>Nuestros Patrocinadores</p>";
 			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
-				data.forEach(function(){
-
-				})
-			});
+				data.forEach(function(item_sponsor){
+					template_hackatones += "<li>"+item_sponsor.sponsore+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
+					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a</li>"
+				});
+			})
 			template_hackatones+="</ul>"
 			console.log(template_hackatones);
 			container_hackaton.append(template_hackatones);
