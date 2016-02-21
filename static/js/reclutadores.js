@@ -41,7 +41,7 @@
             "</div>";
         $.get("/hackaton/preview?id="+id_reclutador+"",function(data){
 			data.forEach(function(item){
-				if(item.paso=1){
+				if(item.paso==1){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
 				.replace(":fecha:", item.fecha)
