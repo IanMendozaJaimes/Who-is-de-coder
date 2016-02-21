@@ -15,17 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from hackaton import views
+from hackaton.views import home, HackatonList, index
+from users import views
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^home/$', views.home),
-    url(r'^prueba/$', views.prueba),
-    url(r'^hackaton/preview/$', views.HackatonList.as_view(), name='hackaton-list'),
-
+    url(r'^$', index),
+    url(r'^home/$', home),
+    url(r'^hackaton/preview/$', HackatonList.as_view(), name='hackaton-list'),
+    url(r'^user/login/$', views.loginView),
+    url(r'^user/signup/$', views.signup),
+    url(r'^user/registroUser/$', views.registroUser),
+    url(r'^user/loginUser/$', views.loginUser),
+    url(r'^user/coderView/$', views.coderView),
+    url(r'^user/crearCoder/$', views.crearCoder),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

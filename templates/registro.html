@@ -11,9 +11,8 @@
 
 <br></br>
 <br></br>
-
-<form method="post" action="/user/loginUser/">
-	{% csrf_token %}
+<form method="post" action="/user/registroUser/">
+    {% csrf_token %}
 <center>
 </b>
 <p>
@@ -22,11 +21,18 @@
 <input type="text" name="nombreName">
 </p>
 
+<font size="2" face="verdana" color="black" > Email: </font>
+<br>
+</br>
+<input type="email" name="emailName" value="">
+<br> </br>
+
 <font size="2" face="verdana" color="black" > Password: </font>
 <br>
 </br>
 <input type="password" name="contraName">
 <br> </br>
+
   <input type="submit">
 </center>
 </form>
