@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b18f992-791b-4ea1-a522-31ae8770d4e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/logos/github.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhoIsTheCoder/urls.py" afterPath="$PROJECT_DIR$/WhoIsTheCoder/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hackaton/serializers.py" afterPath="$PROJECT_DIR$/hackaton/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/coders.js" afterPath="$PROJECT_DIR$/static/js/coders.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/hackaton.js" afterPath="$PROJECT_DIR$/static/js/hackaton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/proyecto.js" afterPath="$PROJECT_DIR$/static/js/proyecto.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/resultados.js" afterPath="$PROJECT_DIR$/static/js/resultados.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/begin.html" afterPath="$PROJECT_DIR$/templates/begin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/coders.html" afterPath="$PROJECT_DIR$/templates/coders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/hackaton.html" afterPath="$PROJECT_DIR$/templates/hackaton.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/proyecto.html" afterPath="$PROJECT_DIR$/templates/proyecto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reclutador.html" afterPath="$PROJECT_DIR$/templates/reclutador.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/registro.html" afterPath="$PROJECT_DIR$/templates/registro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/resultados.html" afterPath="$PROJECT_DIR$/templates/resultados.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
     </list>
     <ignored path="whois.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +64,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7878788">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state vertical-scroll-proportion="-5.6969695">
+              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -61,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -553,7 +567,7 @@
         <state vertical-scroll-proportion="-5.3333335">
           <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
           <folding>
-            <marker date="1456076044648" expanded="true" signature="1686:1901" placeholder="..." />
+            <marker date="1456081925536" expanded="true" signature="1686:1901" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -630,8 +644,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7878788">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state vertical-scroll-proportion="-5.6969695">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -639,7 +653,7 @@
     <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
