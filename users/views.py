@@ -13,6 +13,10 @@ def loginView(request):
 def signup(request):
     return render(request, 'registro.html', {})
 
+def resultadosView(request):
+    busqueda = request.POST['keyword']
+    return render(request, 'resultados.html', {'busqueda':busqueda})
+
 
 def registroUser(request):
     nom = request.POST['nombreName']
