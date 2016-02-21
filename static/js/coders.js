@@ -1,8 +1,9 @@
 (function(){
+    var user;
+    var nickname;
     //GET ultimos hackatones
 	var obtener_hackatones = function(){
 		var container = $(".append-ajax-hacks");
-        var user;
 
 		var template = "<div class='hack-intro'>"+
 		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
@@ -71,7 +72,6 @@
     }
 
     //Funcion para ocultar el formulario
-
     function data_form(){
         var num_veces = $('es_coder').val();
         if(num_veces == 1){
@@ -84,6 +84,11 @@
             }
         }else{
             $('.info-users').hide();
+            var container_participacion = $('.hacks-participacion');
+            nickname = $('nickname_val');
+            $.get('/hackatones/preview/'+nickname, function(data){
+
+            })
         }
     } 
 
