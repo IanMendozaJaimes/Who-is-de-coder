@@ -43,7 +43,7 @@
             "</div>";
 
         var tok = 'https://api.github.com/users/'+user+'/repos';
-        $.get({tok, function (data) {
+        $.get(tok, function (data) {
                     data.forEach(function (item) {
                         var template_bind =
                             template.replace(":name:", item.name)
