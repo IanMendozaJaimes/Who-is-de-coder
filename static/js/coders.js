@@ -61,16 +61,7 @@
     }
 
     function registro_datos(){
-        var template = ""
 
-        $.get("/hackaton/preview",function(data){
-            data.forEach(function(item){
-                if(item.primera==1){
-                    $('.register').hide();
-                    $('.info-users').append();
-                }
-            });
-        });
     }
 
     registro_datos();
