@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>WhoIsTheCoder | Hackaton</title>
+  <title>WhoIsTheCoder | Proyecto</title>
   <meta charset="utf-8" />
   <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
   <meta name="author" content="Polycoders" />
@@ -19,18 +19,33 @@
     <h1>Who is the Coder?</h1>
   </header>
   <section class="begin-body">
-    <h1>Nombre: {{nombreHackaton}}</h1>
-    ><p>{{Fecha}}</p>
-    <p>{{Descripción}}</p>
-    <p>{{Lugar}}</p>
-    <ul>
-      <li>{{Sponsores}}</li>
-      <li>{{LogoSponsores}}</li>
-      <li>{{WebPage}}</li>
-    </ul>
-    <div class="hackaton-proyectos">
-      <!--Ajax -->
-    </div>
+    <article class="project-info">
+      <p>{{Nombre}}</p>
+      <p>{{Proyecto}}</p>
+      <p>{{Descripcion}}</p>
+      <p id="github">{{github}}</p>
+      <p id="url">{{url}}</p>
+    </article>
+    <article class="project-participants">
+      <!--Participants-->
+      <ul>
+      {% for participant in participantes %}
+      <li>participant</li>
+      {% endfor %}
+      </ul>
+    </article>
+    <article class="project-tecnologies">
+      <!--Tecnologias-->
+      <ul>
+      {% for tecno in tecnologias %}
+      <li>tecno</li>
+      {% endfor %}
+      </ul>
+    </article>
+    <article class="project-commits">
+      <!--Commits Github-->
+    </article>
+    <article class="hackaton-sponsores"></article>
   </section>
   <footer class="begin-footer">
     <span class="enterprise">Empresa</span>
@@ -38,6 +53,6 @@
     <span class="contact">Contacto</span>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="{%  static "js/hackaton.js"%}"></script>
+  <script type="text/javascript" src="{%  static "js/proyecto.js"%}"></script>
 </body>
 </html>
