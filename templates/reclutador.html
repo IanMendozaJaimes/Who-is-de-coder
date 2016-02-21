@@ -65,17 +65,18 @@
 
       </article>
       <!-- Buscador -->
-          <form action="/find/" class="register" method="post" id="busqueda">
+          <form action="/find" class="register" method="post" id="busqueda">
             <!--  <fieldset name="Busqueda_fieldset" form="registro">-->
                   <label for="keyword">Ingrese las keywords a buscar</label>
-                  <div id="the-basics">
-                    <input type="text" class="typeahead" name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
-                  </div>
+              <input type="search" class="keyword" name="keyword" id="keyword" required maxlength="15" placeholder="Android">
                   <label for="Fecha_1">Seleccione la fecha</label>
                   <input type="date" name="Fecha_1" id="Fecha_1" required>
                   <label for="Fecha_2">Seleccione la fecha 2</label>
                   <input type="date" name="Fecha_2" id="Fecha_2" required>
-                  <input type="submit" id="Buscar" value="Find something interesting">
+                  <span class="typeahead-button">
+                      <input type="submit" class="typeahead-search-icon" id="Buscar" value="Find something interesting">
+                  </span>
+
               <!--</fieldset>-->
           </form>
   </section>
@@ -88,7 +89,6 @@
       <span class="contact">Contacto</span>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.jquery.js"></script>
   <script type="text/javascript" src="{%  static "js/reclutadores.js"%}"></script>
 </body>
 </html>
