@@ -1,22 +1,40 @@
-<!DOCTYPE html> 
+{% load static from staticfiles %}
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <title>WhoIsTheCoder | Inicio</title>
   <meta charset="utf-8" />
-  <meta name="description" content=""/>
+  <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
   <meta name="author" content="Polycoders" />
   <meta name="robots" content="all"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"/>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
-  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="{%  static "css/app.css"%}">
 </head>
 <body>
-  <h1></h1>
+  <header class="begin-header">
+     <h1>Who is the Coder?</h1>
+  </header>
+  <section class="begin-body">
+      <h1>CODERS</h1>
+      <form action="/user/registro" class="register" method="POST">
+
+      </form>
+      <article class="hacks">
+        <h2>Ultimos Eventos</h2>
+        <div class="append-ajax-hacks">
+        </div>
+      </article>
+  </section>
+  <footer class="begin-footer">
+      <span class="enterprise">Empresa</span>
+      <span class="slogan">Slogan</span>
+      <span class="contact">Contacto</span>
+  </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="{%  static "js/coders.js"%}"></script>
 </body>
 </html>
