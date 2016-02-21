@@ -4,7 +4,7 @@
 
     var primera_vez=function(){
         if($('.es_reclutador').val()==1){
-            $('.register').set("hidden",true);
+            $('.register').attr("hidden",true);
         }
     }
     primera_vez();
