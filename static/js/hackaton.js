@@ -7,7 +7,7 @@
 		var container_hackaton = $('.hack-data');
 		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
 		$.get('/hackaton/'+id, function(data){
-			
+
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
@@ -40,11 +40,9 @@
 				.replace(':desc:', item_project.descripcionProyecto);
 				bind_projecto += "<ul><p>Tecnologias</p>";
 				//Tecnologias
-				$.ajax({url:'/hackaton/equipos/'+item_project.id,
-						success: function(data_tecno){
-						data_tecno.forEach(function(tecno){
-							bind_projecto += "<li>"+tecno.nombre+"</li>"
-						});
+				$.ajax({url:"/hackaton/equipos/"+item_project.id,
+						success: function(data,txtStatus,xhr){
+							bind_projecto += "<li>"+data.nombre+"</li>"
 						bind_projecto += "</ul></div>"
 						container_projects.append($(bind_projecto).fadeIn(1200));
 					}

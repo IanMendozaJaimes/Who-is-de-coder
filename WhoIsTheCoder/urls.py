@@ -42,7 +42,8 @@ urlpatterns = [
     url(r'^user/crearReclutador/$', views.crearReclutador),
     url(r'^hackatones/(?P<idHackaton>[0-9a-aA-Z_-]+)/$', hackatones),
     url(r'^find/(?P<parametro>[0-9a-zA-Z_-]+)/$', EquiposBusquedaView.as_view(), name='equipos-busqueda'),
-    url(r'^user/resultadosView/$', views.resultadosView)
+    url(r'^user/resultadosView/$', views.resultadosView),
+    url(r'^hackaton/proyecto/(?P<idProyecto>[0-9a-aA-Z_-]+)/$', views.proyecto),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
