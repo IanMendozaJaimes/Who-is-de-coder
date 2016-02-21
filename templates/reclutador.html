@@ -66,7 +66,8 @@
       </article>
       <!-- Buscador -->
           <form action="/find" class="register" method="post" id="busqueda">
-            <!--  <fieldset name="Busqueda_fieldset" form="registro">-->
+            <fieldset name="Busqueda_fieldset" form="registro">
+                <legend>Find something</legend>
                   <label for="keyword">Ingrese las keywords a buscar</label>
               <input type="search" class="keyword" name="keyword" id="keyword" required maxlength="15" placeholder="Android">
                   <label for="Fecha_1">Seleccione la fecha</label>
@@ -77,7 +78,7 @@
                       <input type="submit" class="typeahead-search-icon" id="Buscar" value="Find something interesting">
                   </span>
 
-              <!--</fieldset>-->
+              </fieldset>
           </form>
   </section>
   <!-- Aquí se muestran los resultados de la busqueda-->
