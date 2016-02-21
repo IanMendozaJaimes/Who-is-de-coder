@@ -41,9 +41,8 @@
             "</ul>" +
             "<a href=':id_repo:' class='repo-link' id=':id_repo:'>:name:</a>" +
             "</div>";
-        $.get({
-                url: "https://api.github.com/users/"+user+"/repos",
-                success: function (data) {
+
+        $.get({'https://api.github.com/users/'+user+'/repos', function (data) {
                     data.forEach(function (item) {
                         var template_bind =
                             template.replace(":name:", item.name)
@@ -73,7 +72,7 @@
 
     //Funcion para ocultar el formulario
     function data_form(){
-        var num_veces = $('es_coder').val();
+        var num_veces = $('.es_coder').val();
         if(num_veces == 1){
             $('.register').hide();
             user = $('#Nickname');
@@ -82,13 +81,12 @@
                 var container_participacion = $('.hacks-participacion');
                 var template_participacion = "<div><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p></div>"
                 nickname = $('nickname_val');
-                $.get('/hackatones/preview/'+nickname, function(data){
+                $.get('/hackaton/preview/'+nickname, function(data){
                     if(data.lenght!=0){
-                        data.forEach(item){
-                            var bind = template_participacion.replace(":name:",item.name).replace(":date:", item.date)
-                            .replace(":place:", item.place).replace(":desc:",item.place);
-                            container_participacion.append($(bind).fadeIn(1500));
-                        }
+                        data.forEach(function(item){var bind = template_participacion.replace(":name:",item.name).replace(":date:", item.date)
+                        .replace(":place:", item.place).replace(":desc:",item.place);
+                        container_participacion.append($(bind).fadeIn(1500));})
+
                     }else{
                         container_participacion.append("<h4 class='noob'>No tienes particpaciones!</h4>")
                     }
@@ -100,7 +98,7 @@
             $('.info-users').hide();
 
         }
-    } 
+    }
 
     var data = data_form();
     var registro = registro_datos();

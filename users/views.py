@@ -100,10 +100,11 @@ def crearCoder(request):
     disponibilidad = request.POST['Presencial']
     tiempo = request.POST['Tiempo']
 
-    coder = Coder(github, linkedin, nickname, lugarVive, primera, disponibilidad, tiempo)
+    usuario = User.objects.get(username=nickname)
+    coder = Coder(github=github, linkedin=linkedin, usuario=usuario, lugarVive=lugarVive, primera=primera, disponibilidad=disponibilidad, tiempo=tiempo)
     coder.save()
 
-    return JsonResponse({creado:True})
+    return render(request, 'coders.html', {})
 
 
 # 0 es nada
