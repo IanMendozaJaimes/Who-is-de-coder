@@ -4,7 +4,7 @@
 
     var primera_vez=function(){
         if($('.es_reclutador').val()==1){
-            $('.register').attr("hidden",true);
+            $('.r2').attr("hidden",true);
         }
     }
     primera_vez();
@@ -22,7 +22,7 @@
 
 		$.get("/hackaton/preview",function(data){
 			data.forEach(function(item){
-				if(item.paso!=1){
+				if(item.paso==0){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
 				.replace(":fecha:", item.fecha_format)
@@ -60,4 +60,3 @@
     obtener_hackatones();
     obtener_hackatones_buscados();
 })();
-
