@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from hackaton.views import home, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail, hackatones, EquiposBusquedaView, SponsorsList
+from hackaton.views import home, TechList, EquipoDetail, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail, hackatones, EquiposBusquedaView, SponsorsList
 from users import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -30,7 +30,8 @@ urlpatterns = [
     url(r'^hackaton/(?P<id>[0-9]+)/$', HackatonDetail.as_view(), name='hackaton-detail'),
     url(r'^hackaton/(?P<id>[0-9]+)/equipos/$', HackatonEquiposList.as_view(), name='hackaton-equipos'),
     url(r'^hackaton/(?P<id>[0-9]+)/sponsores/$', SponsorsList.as_view(), name='sponsors-list'),
-    #url(r'^hackaton/(?P<id>[0-9]+)/tecnologia/$', HackatonEquiposList.as_view(), name='hackaton-equipos'),
+    url(r'^hackaton/equipos/(?P<id>[0-9]+)/$', EquipoDetail.as_view(), name='equipo-detail'),
+    url(r'^hackaton/tech/(?P<id>[0-9]+)/$', TechList.as_view(), name='tech-list'),
     url(r'^user/login/', views.loginView),
     url(r'^user/signup/$', views.signup),
     url(r'^user/registroUser/$', views.registroUser),

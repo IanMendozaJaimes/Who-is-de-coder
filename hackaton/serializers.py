@@ -62,3 +62,15 @@ class EquiposBusqueda(serializers.ModelSerializer):
     class Meta:
         model = Equipos
         fields = ('nombreEquipo', 'nombreProyecto', 'tecnologias', 'id')
+
+
+class TechListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lenguaje
+        fields=('nombreLenguaje',)
+
+class EquipoDetailSerializer(serializers.HyperlinkedModelSerializer):
+    tech = serializers.HyperlinkedIdentityField(view_name='tech-list', lookup_field='id')
+    class Meta:
+        model = Equipos
+        fields = ('id', 'nombreProyecto', 'descripcionProyecto', 'nombreEquipo', 'tech')

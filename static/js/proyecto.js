@@ -7,23 +7,47 @@
 	$.get("/hackaton/proyecto/"+id,function(data){
 		var bind_proyecto = template_proyecto.replace(':nombre:',data.nombreProyecto).replace(':desc:', data.descripcionProyecto)
 		.replace(':github:', data.githubProyecto).replace(':link:', data.linkProyecto);
+		container_proyecto.append($(bind_proyecto).fadeIn(1000));
 	});
 	//GET Participants
 	var container_participant = $('.project-participants');
-	var template_participant = "<div class='participants-div'><h3>Our Team</h3>"
-
-	$.get("/hackaton/proyecto/",function(data){
-
-	})
-
-	//GET Commits
-	$.get("http://api.github.com/repos/"+Owner+"/"+Repository+"/commits",function(data){
-		var container = $('.project-commits');
-		var template = "<div class='github-div'><h4>Commit :message:</h4><p>:date:</p></div>";
-		data.forEach(item){
-			var bind = template.replace(":message:",item.commit.message).replace(":message:",item.commit.commiter.date);
-			container.append($(bind).fadeIn(1500);
+	var template_participant = "<div class='participants-div'><h3>Our Team</h3><ul>"
+	$.ajax({
+		url:"/hackaton/proyecto/"+id
+		success:function(data){
+			data.forEach(item_participant){
+				template_participant += "<li>"+item_participant.nickname+"</li>"
+				template_participant += "<li>"+item_participant.lugar+"</li>"	
+			}
+			template_participant += "</ul></div>"
+			container_participant.append();
 		}
-	});
+	})
+	//GET tECNOLOGIES
+	$.ajax({url:'/hackaton/equipos/'+item_project.id,
+		success: function(data_tecno){
+				data_tecno.forEach(function(tecno){
+				bind_projecto += "<li>"+tecno.nombre+"</li>"
+			});
+				bind_projecto += "</ul></div>"
+				container_projects.append($(bind_projecto).fadeIn(1200));
+			}
+		});
+	//GET Commits
+	var container = $('.project-commits');
+	//¿Y si no tengo Github?
+	var github2 = $('#git').val();
+	if(github2===0){
+		container.append('<h2>Aun no se vincula una cuenta</h2>');
+		$('')
+	}else{
+		$.get("http://api.github.com/repos/"+Owner+"/"+Repository+"/commits",function(data){
+			var template = "<div class='github-div'><h4>Commit :message:</h4><p>:date:</p></div>";
+			data.forEach(item){
+				var bind = template.replace(":message:",item.commit.message).replace(":message:",item.commit.commiter.date);
+				container.append($(bind).fadeIn(1500);
+			}
+		});
+	}
 
 })();
