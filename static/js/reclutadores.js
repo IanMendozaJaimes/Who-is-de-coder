@@ -7,7 +7,7 @@
 		var container = $(".append-ajax-hacks");
 
 		var template = "<div class='hack-intro'>"+
-		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
+		"<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
             "<li class='hack-place'>:place:</li>"+
             "<li class='hack-date'>:fecha:</li>"+
@@ -41,7 +41,7 @@
             "</div>";
         $.get("/hackaton/preview?id="+id_reclutador+"",function(data){
 			data.forEach(function(item){
-				if(item.paso=1){
+				if(item.paso==1){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
 				.replace(":fecha:", item.fecha)
@@ -55,4 +55,3 @@
     obtener_hackatones_buscados();
 
 })();
-

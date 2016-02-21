@@ -15,6 +15,9 @@ class Lenguaje(models.Model):
     )
     objetivo = models.CharField(max_length=255, choices=objetivoTupla, default=indefinido)
 
+    def __str__(self):
+	       return self.nombreLenguaje
+
 
 
 class Reclutador(models.Model):
@@ -23,10 +26,16 @@ class Reclutador(models.Model):
     primera = models.PositiveIntegerField(default=0)
     usuario = models.OneToOneField(User)
 
+    def __str__(self):
+	       return self.usuario.username
+
 
 class Organizador(models.Model):
     primera = models.PositiveIntegerField(default=0)
     usuario = models.OneToOneField(User)
+
+    def __str__(self):
+	       return self.usuario.username
 
 
 class Coder(models.Model):
@@ -53,6 +62,9 @@ class Coder(models.Model):
 
     usuario = models.OneToOneField(User)
 
+    def __str__(self):
+	       return self.usuario.username
+
 
 class Equipos(models.Model):
     nombreEquipo = models.CharField(max_length=255)
@@ -60,3 +72,8 @@ class Equipos(models.Model):
     descripcionProyecto = models.TextField(default="None")
     participantes = models.ManyToManyField(Coder)
     tecnologias = models.ManyToManyField(Lenguaje)
+    github = models.URLField(max_length=255, default="")
+    url = models.URLField(max_length=255, default="")
+
+    def __str__(self):
+	       return self.nombreEquipo

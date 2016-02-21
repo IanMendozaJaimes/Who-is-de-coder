@@ -8,6 +8,9 @@ class Sponsor(models.Model):
     logo = models.ImageField(upload_to="logos/")
     pagina = models.URLField(max_length=255)
 
+    def __str__(self):
+	       return self.nombre
+
 class Hackaton(models.Model):
     nombreHackaton = models.CharField(max_length=255)
     lugar = models.CharField(max_length=255)
@@ -16,3 +19,6 @@ class Hackaton(models.Model):
     equipos = models.ManyToManyField(Equipos)
     organizadores = models.ManyToManyField(Organizador)
     sponsores = models.ManyToManyField(Sponsor)
+
+    def __str__(self):
+	       return self.nombreHackaton
