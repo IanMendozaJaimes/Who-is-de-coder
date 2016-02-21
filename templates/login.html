@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title>WhoIsTheCoder | Login</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Ingresa y comienza a crear, organizar y descubrir código."/>
+  <meta name="author" content="Polycoders" />
+  <meta name="robots" content="all"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
+  <link rel="stylesheet" type="text/css" href="{%  static "css/app.css"%}">
 </head>
 <body>
 	<header>
-	<h1><center>WHO IS THE CODER?</center></h1>
-
-</header>
-
-<br></br>
-<br></br>
-
-<form method="post" action="/user/loginUser/">
-	{% csrf_token %}
-<center>
-</b>
-<p>
-<font size="2" face="verdana" color="black" > Nickname: </font>
-<br></br>
-<input type="text" name="nickName">
-</p>
-
-<font size="2" face="verdana" color="black" > Password: </font>
-<br>
-</br>
-<input type="password" name="contraName">
-<br> </br>
-  <input type="submit">
-</center>
-</form>
-
+		<h1><center>WHO IS THE CODER?</center></h1>
+	</header>
+	<form method="post" action="/user/loginUser/">
+		{% csrf_token %}
+		<p>Nickname: <input type="text" name="nickName"></p>
+		<p>Password: <input type="password" name="contraName"></p>
+		<input type="submit" value="Ingresar">
+	</form>
 </body>
 </html>
