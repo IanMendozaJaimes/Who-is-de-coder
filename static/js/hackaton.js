@@ -1,6 +1,6 @@
 (function(){
 	function obtener_proyectos(){
-		var id = $('#id_hack');
+		var id = $('#id_hack').val();
 		var container_hackaton = $('.hack-data');
 		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul>";
 		$.get('/hackaton/'+id, function(data){
