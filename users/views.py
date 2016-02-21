@@ -57,26 +57,27 @@ def loginUser(request):
 
 
 def coderView(request):
-    nombre = request.user.first_name
-    nickname = request.user.username
     github = False
     linkedin = False
     que = 0
     existe = None
     user = None
     si = 0
+    nombre = request.user.first_name
+    nickname = request.user.username
 
     try:
         user = User.objects.get(username=nickname)
         existe = Coder.objects.get(usuario=user)
         que = request.session.get('quees')
 
+
         if existe.primera != 0:
             si = 1
             github = existe.github
             linkedin = existe.linkedin
 
-        if que == 0:
+        if que != 1:
             request.session["quees"] = 1
             que = 1
 
@@ -106,8 +107,9 @@ def reclutadorView(request):
             empresa = existe.empresa
             lugarEmpresa = existe.lugarEmpresa
 
-        if que == 0:
+        if que != 3:
             request.session["quees"] = 3
+            que = 3
             si = 1
 
         return render(request, 'reclutador.html', {'nickname':nickname, 'nombre':nombre, 'esReclutador':si, 'queEs': que, 'empresa':empresa, 'lugarEmpresa':lugarEmpresa})

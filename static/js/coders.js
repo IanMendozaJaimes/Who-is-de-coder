@@ -6,7 +6,7 @@
 		var container = $(".append-ajax-hacks");
 
 		var template = "<div class='hack-intro'>"+
-		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
+		"<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
             "<li class='hack-place'>:place:</li>"+
             "<li class='hack-date'>:fecha:</li>"+
@@ -80,12 +80,12 @@
             if(user!=null){
                 var repos = obtener_repos();
                 var container_participacion = $('.hacks-participacion');
-                var template_participacion = "<div><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p></div>"
+                var template_participacion = "<div><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p><p><a href=/hackaton/:id:'>Más...</a></p></div>"
                 nickname = $('nickname_val');
                 $.get('/hackaton/preview/'+nickname, function(data){
                     if(data.lenght!=0){
                         data.forEach(function(item){var bind = template_participacion.replace(":name:",item.name).replace(":date:", item.date)
-                        .replace(":place:", item.place).replace(":desc:",item.place);
+                        .replace(":place:", item.place).replace(":desc:",item.place).replace(":id:",item.id);
                         container_participacion.append($(bind).fadeIn(1500));})
 
                     }else{
