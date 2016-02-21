@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from .models import Coder
+from .models import Coder, Reclutador
 from django.http import JsonResponse
 
 
@@ -87,6 +87,35 @@ def coderView(request):
 
 
 def reclutadorView(request):
+    nombre = request.user.first_name
+    nickname = request.user.username
+    empresa = False
+    lugarEmpresa = False
+    que = 0
+    existe = None
+    user = None
+    si = 0
+
+    try:
+        user = User.objects.get(username=nickname)
+        existe = Reclutador.objects.get(usuario=user)
+        que = request.session.get('quees')
+
+        if existe.primera != 0:
+            si = 1
+            empresa = existe.empresa
+            lugarEmpresa = existe.lugarEmpresa
+
+        if que == 0:
+            request.session["quees"] = 3
+            si = 1
+
+        return render(request, 'reclutador.html', {'nickname':nickname, 'nombre':nombre, 'esReclutador':si, 'queEs': que, 'empresa':empresa, 'lugarEmpresa':lugarEmpresa})
+
+    except Exception as e:
+        que = 3
+        return render(request, 'reclutador.html', {'nickname':nickname, 'nombre':nombre, 'esReclutador':si, 'queEs': que, 'empresa':empresa, 'lugarEmpresa':lugarEmpresa})
+
     return render(request, 'reclutador.html', {})
 
 
@@ -114,4 +143,13 @@ def crearCoder(request):
 
 
 def crearReclutador(request):
-    nombre = request.user.username
+    nickname = request.user.username
+    empresa = request.POST['empresa']
+    lugarEmpresa = request.POST['lugarEmpresa']
+    primera = 1
+
+    usuario = User.objects.get(username=nickname)
+    reclutador = Reclutador(usuario=usuario, empresa=empresa, lugarEmpresa=lugarEmpresa, primera=primera)
+    reclutador.save()
+
+    return render(request, 'reclutador.html', {})

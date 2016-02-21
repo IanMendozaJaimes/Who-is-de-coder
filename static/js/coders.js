@@ -42,7 +42,8 @@
             "<a href=':id_repo:' class='repo-link' id=':id_repo:'>:name:</a>" +
             "</div>";
 
-        $.get({'https://api.github.com/users/'+user+'/repos', function (data) {
+        var tok = 'https://api.github.com/users/'+user+'/repos';
+        $.get({tok, function (data) {
                     data.forEach(function (item) {
                         var template_bind =
                             template.replace(":name:", item.name)

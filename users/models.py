@@ -59,3 +59,4 @@ class Equipos(models.Model):
     nombreProyecto = models.CharField(max_length=255)
     descripcionProyecto = models.TextField(default="None")
     participantes = models.ManyToManyField(Coder)
+    tecnologias = models.ManyToManyField(Lenguaje)

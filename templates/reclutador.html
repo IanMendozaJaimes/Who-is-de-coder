@@ -17,14 +17,21 @@
 <body>
   <header class="begin-header">
      <h1>Who is the Coder?</h1>
+     {{ nombre }}
+     {{ nickname }}
+     {{ queEs }}
+     {{ esReclutador }}
+     {{ empresa }}
+     {{ lugarEmpresa }}
   </header>
       <input type="hidden" class="es_coder" value="{{escoder}}"/>
       <input type="hidden" class="que_es" value="{{queEs}}"/>
       <input type="hidden" class="nickname_val" value="{{nickname}}"/>
   <section class="begin-body">
       <h1>Reclutador</h1>
-      <form action="" class="register" method="POST" id="registro">
-          <fieldset name="Registro" form="registro">
+      <form action="/user/crearReclutador/" name="registroR" class="register" method="POST" id="registro">
+          {% csrf_token %}
+          <!--<fieldset name="Registro" form="registro">-->
               <!--
               <label for="Presencial">Seleccione lo que mejor corresponda:</label>
               <select name="Presencial" id="Presencial" required>
@@ -47,7 +54,7 @@
 
               <input type="hidden" name="Primera" id="Primera" value="1">
               <input type="submit" id="Enviar" value="Let's Hack ;)">
-          </fieldset>
+          <!--</fieldset>-->
       </form>
       <article class="hacks">
         <h2>Proximos Eventos</h2>
@@ -59,7 +66,7 @@
       </article>
       <!-- Buscador -->
           <form action="/find/" class="register" method="post" id="busqueda">
-              <fieldset name="Busqueda_fieldset" form="registro">
+            <!--  <fieldset name="Busqueda_fieldset" form="registro">
                   <label for="keyword">Ingrese las keywords a buscar</label>
                   <input type="text"  name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
                   <label for="Fecha_1">Seleccione la fecha</label>
@@ -67,7 +74,7 @@
                   <label for="Fecha_2">Seleccione la fecha 2</label>
                   <input type="date" name="Fecha_2" id="Fecha_2" required>
                   <input type="submit" id="Buscar" value="Find something interesting">
-              </fieldset>
+              </fieldset>-->
           </form>
   </section>
   <!-- Aquí se muestran los resultados de la busqueda-->

@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^user/coderView/$', views.coderView),
     url(r'^user/reclutadorView/$', views.reclutadorView),
     url(r'^user/crearCoder/$', views.crearCoder),
+    url(r'^user/crearReclutador/$', views.crearReclutador),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
