@@ -29,7 +29,7 @@
 			var bind_projecto;
 			data.forEach(function(item_project){
 				bind_projecto= template_projects.replace(':id:', item_project.id).replace(':equipo:', item_project.nombreEquipo).replace(':proyecto:', item_project.proyectoEquipo)
-				.replace(':desc:', item_project.desc);
+				.replace(':desc:', item_project.descripcionProyecto);
 				bind_projecto += "<ul><p>Tecnologias</p>";
 				//Tecnologias
 				$.get('', function(data_tecno){
