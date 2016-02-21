@@ -74,3 +74,11 @@ class EquipoDetailSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Equipos
         fields = ('id', 'nombreProyecto', 'descripcionProyecto', 'nombreEquipo', 'tech', 'github', 'url')
+
+
+
+class BuscarCoder(serializers.ModelSerializer):
+
+    class Meta:
+        model = Coder
+        fields = ('participantes', 'id')
