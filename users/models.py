@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 #from hackaton.models import Hackaton
-
+# sury <3
 
 class Lenguaje(models.Model):
     nombreLenguaje = models.CharField(max_length=255)
