@@ -80,7 +80,7 @@
             if(user!=null){
                 var repos = obtener_repos();
                 var container_participacion = $('.hacks-participacion');
-                var template_participacion = "<div><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p><p><a href=/hackaton/:id:'>Más...</a></p></div>"
+                var template_participacion = "<div class='div-participacion'><h3>:name:</h3><p>:date:</p><p>:place:</p><p>:place: ... </p><p><a href=/hackaton/:id:'>Más...</a></p></div>"
                 nickname = $('nickname_val');
                 $.get('/hackaton/preview/'+nickname, function(data){
                     if(data.lenght!=0){
