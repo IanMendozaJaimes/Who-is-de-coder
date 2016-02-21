@@ -42,5 +42,9 @@
 			})
 		})
 	}
+<<<<<<< HEAD:templates/js/app.js
+
+=======
 	obtener_hackatones();
+>>>>>>> origin/master:static/js/app.js
 })();
