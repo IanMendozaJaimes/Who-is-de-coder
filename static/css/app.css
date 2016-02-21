@@ -32,3 +32,6 @@ body{
 	width: 60%;
 	background-color: white; 
 }
+.none{
+	display: none;
+}

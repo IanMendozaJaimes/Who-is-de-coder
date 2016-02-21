@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'hackaton',
     'users',
     'rest_framework',
+    'autofixture'
 ]
 
 MIDDLEWARE_CLASSES = [

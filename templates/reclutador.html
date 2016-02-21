@@ -65,15 +65,11 @@
 
       </article>
       <!-- Buscador -->
-          <form action="/find" class="register" method="post" id="busqueda">
+          <form action="resultados.html" class="register" method="get" id="busqueda">
             <fieldset name="Busqueda_fieldset" form="registro">
                 <legend>Find something</legend>
                   <label for="keyword">Ingrese las keywords a buscar</label>
               <input type="search" class="keyword" name="keyword" id="keyword" required maxlength="15" placeholder="Android">
-                  <label for="Fecha_1">Seleccione la fecha</label>
-                  <input type="date" name="Fecha_1" id="Fecha_1" required>
-                  <label for="Fecha_2">Seleccione la fecha 2</label>
-                  <input type="date" name="Fecha_2" id="Fecha_2" required>
                   <span class="typeahead-button">
                       <input type="submit" class="typeahead-search-icon" id="Buscar" value="Find something interesting">
                   </span>
@@ -81,6 +77,9 @@
               </fieldset>
           </form>
   </section>
+       <article class="resultados-busqueda">
+
+      </article>
   <!-- Aquí se muestran los resultados de la busqueda-->
     <article class="resultados-busqueda">
     </article>
@@ -90,6 +89,9 @@
       <span class="contact">Contacto</span>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{%  static "js/reclutadores.js"%}"></script>
+  <script type="text/javascript" src="{%  static "js/resultados.js"%}"></script>
 </body>
 </html>
