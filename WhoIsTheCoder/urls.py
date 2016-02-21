@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^home/$', home),
     url(r'^hackaton/preview/$', HackatonList.as_view(), name='hackaton-list'),
-    url(r'^user/login/$', views.loginView),
+    url(r'^user/login/', views.loginView),
     url(r'^user/signup/$', views.signup),
     url(r'^user/registroUser/$', views.registroUser),
     url(r'^user/loginUser/$', views.loginUser),
