@@ -10,21 +10,21 @@
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
-			/*bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
+			bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
 			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
 				data.forEach(function(item_sponsor){
 					bind_hack += "<li>"+item_sponsor.sponsore+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
 					"<li><a href='"+item_sponsor.webSponsor+"'>"+item_sponsor.webSponsor+"</a</li>"
 				});
 			})
-			bind_hack+="</ul>"*/
+			bind_hack+="</ul>"
 			console.log(bind_hack);
 			container_hackaton.append(bind_hack);
 		})
 
 		//Hakcton project
 		var container_projects = $('.hackaton-proyectos');
-		var template_projects = "<div class='project-div'><h3><a href='/proyecto/:id:'>Equipo :equipo:</a></h3><h4>Proyecto :proyecto:</h4><p>Descripción: :desc:</p>";
+		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo :equipo:</a></h3><h4>Proyecto :proyecto:</h4><p>Descripción: :desc:</p>";
 		$.get('/hackaton/'+id'/equipo', function(data){
 			var bind_projecto;
 			data.forEach(function(item_project){

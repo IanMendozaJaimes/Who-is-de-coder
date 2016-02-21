@@ -64,9 +64,11 @@
         var queEs = $('.que_es').val();
         if(queEs==1){
             $('.container-apis').hide();
+            $('#nickname').hide();
             $('.yo_soy').text('Programador');
         }else if(queEs==3){
             $('.yo_soy').text('Reclutador');
+            $('#name').hide();
         }else if(queEs==2)
          $('.yo_soy').text('Organizador');
     }
