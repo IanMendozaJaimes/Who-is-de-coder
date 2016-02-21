@@ -11,22 +11,25 @@
 
 <br></br>
 <br></br>
+
+<form method="post" action="/user/loginUser/">
+	{% csrf_token %}
 <center>
 </b>
 <p>
-<font size="2" face="verdana" color="black" > Email: </font>
+<font size="2" face="verdana" color="black" > Nickname: </font>
 <br></br>
-<input type="text" name="nombredelacaja">
+<input type="text" name="nickName">
 </p>
 
 <font size="2" face="verdana" color="black" > Password: </font>
 <br>
 </br>
-<input type="password" name="contraseña">
+<input type="password" name="contraName">
 <br> </br>
   <input type="submit">
 </center>
-
+</form>
 
 </body>
 </html>
