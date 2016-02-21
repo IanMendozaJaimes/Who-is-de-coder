@@ -17,6 +17,9 @@ def resultadosView(request):
     busqueda = request.POST['keyword']
     return render(request, 'resultados.html', {'busqueda':busqueda})
 
+def proyecto(request, idProyecto):
+    return render(request, 'proyecto.html', {'idProyecto':idProyecto})
+
 
 def registroUser(request):
     nom = request.POST['nombreName']

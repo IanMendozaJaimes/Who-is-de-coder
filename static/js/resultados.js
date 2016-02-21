@@ -7,7 +7,7 @@
 		var container = $(".resultados-busqueda");
         var template;
             template = "<div class='resultados'>"+
-                +"<h3 class='nombre-proyecto'>:nombre-proyecto:</h3>"+
+                "<a href='/hackaton/proyecto/:id:' class='nombre-proyecto'>:nombre-proyecto:</a>"+
                 "<ul class='resultado-data'>"+
                     "<li class='nombre-equipo'>:nombre-equipo:</li>"+
                     "<li class='language'>:language:</li>"+

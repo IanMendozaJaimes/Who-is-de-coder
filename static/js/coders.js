@@ -56,7 +56,6 @@
                         container.append($(template_bind).fadeIn(1500));
                     });
                 }
-            }
         );
     }
     //Funcion para validar el ingreso como usuario

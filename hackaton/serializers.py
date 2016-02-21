@@ -73,4 +73,4 @@ class EquipoDetailSerializer(serializers.HyperlinkedModelSerializer):
     tech = serializers.HyperlinkedIdentityField(view_name='tech-list', lookup_field='id')
     class Meta:
         model = Equipos
-        fields = ('id', 'nombreProyecto', 'descripcionProyecto', 'nombreEquipo', 'tech')
+        fields = ('id', 'nombreProyecto', 'descripcionProyecto', 'nombreEquipo', 'tech', 'github', 'url')
