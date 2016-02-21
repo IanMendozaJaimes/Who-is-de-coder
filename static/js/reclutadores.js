@@ -39,7 +39,7 @@
          var container = $(".hacks-buscados");
         //Obtener hackatones en los que haya buscado el reclutador
         var template = "<div class='hackatones-buscados'>" +
-            "<h3 class='hack-name'>:name:</h3>" +
+            "<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
             "<ul class='hack-data'>" +
                 "<li class='hack-place'>:place:</li>"+
                 "<li class='hack-date'>:fecha:</li>"+
