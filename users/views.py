@@ -40,13 +40,13 @@ def registroUser(request):
 def loginUser(request):
     nom = request.POST['nombreName']
     contra = request.POST['contraName']
-    user = User.authenticate(username=nom, password=contra)
+    user = authenticate(username=nom, password=contra)
 
     if user is not None:
         if user.is_active:
-            login(user)
+            login(request, user)
             request.quees = 0
-            return render(request, 'begin.html', {nombre:user.username})
+            return redirect('/home')
         else:
             return redirect('/login')
 
