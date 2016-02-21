@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from hackaton import views
+from hackaton.views import home, HackatonList
 from users import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -23,9 +23,9 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^home/$', views.home),
-    url(r'^hackaton/preview/$', views.HackatonList.as_view(), name='hackaton-list'),
-    url(r'^user/login/$', views.login),
+    url(r'^home/$', home),
+    url(r'^hackaton/preview/$', HackatonList.as_view(), name='hackaton-list'),
+    url(r'^user/login/$', views.loginView),
     url(r'^user/signup/$', views.signup),
     url(r'^user/registroUser/$', views.registroUser),
     url(r'^user/loginUser/$', views.loginUser),

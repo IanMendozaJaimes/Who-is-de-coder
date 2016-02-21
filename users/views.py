@@ -6,11 +6,11 @@ from .models import Coder
 from django.http import JsonResponse
 
 
-def login(request):
-    return render(request, '', {})
+def loginView(request):
+    return render(request, 'login.html', {})
 
 def signup(request):
-    return render(request, '', {})
+    return render(request, 'registro.html', {})
 
 
 def registroUser(request):
@@ -24,22 +24,27 @@ def registroUser(request):
 #        if e.username == nom:
 #            si = True
 
-    user = User.objects.create_user(nom, email, contra)
-    user.backend = 'django.contrib.auth.backends.ModelBackend'
-    user.save()
-    login(request, user)
-    request.quees = 0
-    return render(request, 'begin.html', {nombre:user.username})
+    try:
+        user = User.objects.create_user(username=nom,  password=contra)
+        user.backend = 'django.contrib.auth.backends.ModelBackend'
+        user.email = email
+        user.save()
+        login(request, user)
+        assert True
+        request.quees = 0
+    except Exception as e:
+        return redirect('/user/signup/')
+    return render(request, 'begin.html', {'nombre':user.username})
 
 
 def loginUser(request):
-    nom = request.POST['']
-    contra = request.POST['']
+    nom = request.POST['nombreName']
+    contra = request.POST['contraName']
     user = User.authenticate(username=nom, password=contra)
 
     if user is not None:
         if user.is_active:
-            login(request, user)
+            login(user)
             request.quees = 0
             return render(request, 'begin.html', {nombre:user.username})
         else:
@@ -56,7 +61,7 @@ def coderView(request):
     if request.quees == 0:
         request.quees = 1;
 
-    return render(request, '', {nombre:nombre, esCoder:si, queEs: request.quees})
+    return render(request, 'coders.html', {nombre:nombre, esCoder:si, queEs: request.quees})
 
 def crearCoder(request):
     nombre = request.user.username

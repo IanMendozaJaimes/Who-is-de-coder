@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<header>
+	<h1><center>WHO IS THE CODER?</center></h1>
+
+</header>
+
+<br></br>
+<br></br>
+<form method="post" action="/user/registroUser/">
+    {% csrf_token %}
+<center>
+</b>
+<p>
+<font size="2" face="verdana" color="black" > Nombre: </font>
+<br></br>
+<input type="text" name="nombreName">
+</p>
+
+<font size="2" face="verdana" color="black" > Email: </font>
+<br>
+</br>
+<input type="email" name="emailName" value="">
+<br> </br>
+
+<font size="2" face="verdana" color="black" > Password: </font>
+<br>
+</br>
+<input type="password" name="contraName">
+<br> </br>
+
+  <input type="submit">
+</center>
+</form>
+
+</body>
+</html>
