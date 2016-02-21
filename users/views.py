@@ -32,7 +32,7 @@ def registroUser(request):
         user.first_name = nom
         user.save()
         login(request, user)
-        request.quees = 0
+        request.session['quees'] = 0
     except Exception as e:
         return redirect('/user/signup/')
 
@@ -47,23 +47,28 @@ def loginUser(request):
     if user is not None:
         if user.is_active:
             login(request, user)
-            request.quees = 0
+            request.session["quees"] = 0
             return redirect('/home')
         else:
             return redirect('/login')
 
 
 def coderView(request):
-    nombre = request.user.username
-    existe = User.objects.get(username=nombre)
-    si = False
-    if existe is not None:
-        si = True
+    nombre = request.user.first_name
+    nickname = request.user.username
+    user = User.objects.get(username=nickname)
+    existe = Coder.objects.get(usuario=user)
+    que = request.session.get('quees')
+    print(que)
+    si = 0
+    if existe.primera != 0:
+        si = 1
 
-    if request.quees == 0:
-        request.quees = 1;
+    if que == 0:
+        request.session["quees"] = 1
+        que = 1
 
-    return render(request, 'coders.html', {nombre:nombre, esCoder:si, queEs: request.quees})
+    return render(request, 'coders.html', {'nickname':nickname, 'nombre':nombre, 'esCoder':si, 'queEs': que})
 
 def crearCoder(request):
     nombre = request.user.username
