@@ -1,22 +1,28 @@
 (function(){
 	function obtener_proyectos(){
-		var container = $('.hackaton-proyectos');
-		var template_proyectos = "<h3>:nombre:</h3><p>:descripcion:</p>"+
-		"<p>Tecnologías</p><ul>"
-		$.get('/hackaton/proyectos', function(data){
-			data.forEach(item){
-				var binding = template_proyectos.replace(":nombre:",item.nombre).replace(":descripcion:", item.descripcion);
-				var i=0;
-				var tecnologias = item.tecnologias;
-				for(i; i<tecnologias.lenght;i++){
-					template_proyectos += "<li><a href='"+tecnologias[i].id+"'>"+tecnologias[i].name+"</a></li>";
-				}
-				template_proyectos += "</ul><p>Integrantes</p><ul>"
-				for(i=0;i<item.integrantes.lenght;i++){
-					template_proyectos += "<li><a href='"+item.integrantes[i].nickname+"'>"+item.integrantes[i].name+"</a></li>";
-				}
-				template_proyectos += "</ul>"
-				container.append($(binding).fadeIn(1500));
+		var id = $('#id_hack');
+		var container_hackaton = $('.hackaton-proyectos');
+		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul>";
+		$.get('/hackaton/'+id, function(data){
+
+			template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
+			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
+
+			template_hackatones+="<ul><p>Nuestros Patrocinadores</p>";
+			var i;
+			for(i=0;i<data.sponsores.length;i++){
+				template_hackatones+="<li>"+data.sponsores[i]+"</li>"
+			}
+			template_hackatones+="</ul>"
+
+			container_hackaton.append(template_hackatones);
+		})
+
+
+		$.get('/hackaton/'+id, function(data){
+				$.get(""+data.equipazo,function(data){
+					
+				})
 			}
 		})
 	}
