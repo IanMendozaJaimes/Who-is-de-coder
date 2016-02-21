@@ -1,9 +1,17 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Who is the Coder?</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+  <title>WhoIsTheCoder | Inicio Reclutador</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
+  <meta name="author" content="Polycoders" />
+  <meta name="robots" content="all"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
 </head>
 <body>
 	<header id="m-header">
@@ -28,23 +36,29 @@
 		</article>
 	</section>
 	<p></p>
-    <div>
-        <form action="" method="post">
-            <fieldset>
-                <legend>Call to Action</legend>
-                <label for="Nombre">Hi (type your name here)</label>
-                <input type="text" name="Nombre" id="Nombre" required maxlength="50">
-                <label for="Email">Recibe un ebook gratis!!</label>
-                <input type="email" name="email" id="email" required maxlength="100">
-                <button>Registrate aqui</button>
-
-                <script async="async" id="button_49771a26-5456-416f-bc49-e5195bc158d0" src="//www.paywithatweet.com/embeds/49771a26-5456-416f-bc49-e5195bc158d0" charset="utf-8"></script>
-
-            </fieldset>
-        </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Change the way you Hack</legend>
+                    <label for="Email" class="label-info">Dejanos tu email y regalanos un tweet para descargar algo especial</label><br>
+                    <input type="email" class="text-center" name="email" id="email" required maxlength="100" autofocus placeholder="soyincreible@example.com"><br>
+                    <div id="contenedor-tweet" class="container">
+                        <script async="async" id="button_49771a26-5456-416f-bc49-e5195bc158d0" src="//www.paywithatweet.com/embeds/49771a26-5456-416f-bc49-e5195bc158d0" charset="utf-8"></script>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="col-md-3"></div>
+        </div>
     </div>
-	<footer>
-		Creado por PoliHacks con Python y Django.
-	</footer>
+  <footer class="begin-footer">
+      <span class="enterprise">Empresa</span>
+      <span class="slogan">Slogan</span>
+      <span class="contact">Contacto</span>
+  </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
