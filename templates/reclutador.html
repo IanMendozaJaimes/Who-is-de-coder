@@ -1,36 +1,66 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title></title>
+  <title>WhoIsTheCoder | Inicio</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
+  <meta name="author" content="Polycoders" />
+  <meta name="robots" content="all"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
+  <link rel="stylesheet" type="text/css" href="{%  static "css/app.css"%}">
 </head>
 <body>
-	<header>
-	<h1><center>RECLUTADOR</center></h1>
+  <header class="begin-header">
+     <h1>Who is the Coder?</h1>
+  </header>
+  <section class="begin-body">
+      <h1>Reclutador</h1>
+      <form action="" class="register" method="POST" id="registro">
+          <fieldset name="Registro" form="registro">
+              <label for="Presencial">Seleccione lo que mejor corresponda:</label>
+              <select name="Presencial" id="Presencial" required>
+                  <option value="">Seleccione una opcion</option>
+                  <option value="1">Trabajo Presencial</option>
+                  <option value="2">Remoto</option>
+              </select>
+              <label for="Tiempo">Seleccione su disponibilidad de horario</label>
+                <select name="Tiempo" id="Tiempo" required>
+                  <option value="">Seleccione una opcion</option>
+                  <option value="1">Tiempo Completo</option>
+                  <option value="2">Medio Tiempo</option>
+              </select>
+              <input type="hidden" name="Primera" id="Primera" value="1">
+              <input type="submit" id="Enviar" value="Let's Hack ;)">
+          </fieldset>
+      </form>
+      <article class="hacks">
+        <h2>Ultimos Eventos</h2>
+        <div class="append-ajax-hacks">
+        </div>
+      </article>
+      <article class="hacks-buscados">
 
-</header>
+      </article>
 
-<br></br>
-<br></br>
+      <form action="" class="register" method="POST" id="busqueda">
+          <fieldset name="Busqueda" form="registro">
 
-<font size="2" face="verdana" color="black" > Remoto/Presencial: </font>
-<br>
-</br>
-<form action="">
-  <input list="Remoto">
-  <datalist   id="Presencial">
+              <input type="submit" id="Enviar" value="Let's Hack ;)">
+          </fieldset>
+      </form>
 
-  </datalist> 
-</form> 
-<b> 
-
-
-</b>
-<p>
-<font size="2" face="verdana" color="black" > Lugar de trabajo: </font>
-<br></br>
-<input type="text" name="nombredelacaja">
-</p>
-
-
+  </section>
+  <footer class="begin-footer">
+      <span class="enterprise">Empresa</span>
+      <span class="slogan">Slogan</span>
+      <span class="contact">Contacto</span>
+  </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="{%  static "js/coders.js"%}"></script>
 </body>
 </html>
