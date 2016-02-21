@@ -25,20 +25,6 @@
       <h1>Reclutador</h1>
       <form action="" class="register" method="POST" id="registro">
           <fieldset name="Registro" form="registro">
-              <!--
-              <label for="Presencial">Seleccione lo que mejor corresponda:</label>
-              <select name="Presencial" id="Presencial" required>
-                  <option value="">Seleccione una opcion</option>
-                  <option value="1">Trabajo Presencial</option>
-                  <option value="2">Remoto</option>
-              </select>
-              <label for="Tiempo">Seleccione su disponibilidad de horario</label>
-                <select name="Tiempo" id="Tiempo" required>
-                  <option value="">Seleccione una opcion</option>
-                  <option value="1">Tiempo Completo</option>
-                  <option value="2">Medio Tiempo</option>
-              </select>
-          -->
              <label for="idEmpresa">Escribe el nombre de tu empresa: </label>
              <input type="text" name="empresa" id="idEmpresa" value="" placeholder="scope">
 
@@ -58,7 +44,7 @@
 
       </article>
       <!-- Buscador -->
-          <form action="/find/" class="register" method="post" id="busqueda">
+          <form action="/find" class="register" method="post" id="busqueda">
               <fieldset name="Busqueda_fieldset" form="registro">
                   <label for="keyword">Ingrese las keywords a buscar</label>
                   <input type="text"  name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
