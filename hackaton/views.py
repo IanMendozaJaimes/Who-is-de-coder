@@ -6,6 +6,10 @@ from .serializers import HackatonSerializer
 def home(request):
     return render(request, 'begin.html', {})
 
+
+def index(request):
+    return render(request, 'index.html', {})
+
 class HackatonList(generics.ListCreateAPIView):
     queryset = Hackaton.objects.all()
     serializer_class = HackatonSerializer
