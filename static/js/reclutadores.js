@@ -7,7 +7,7 @@
 		var container = $(".append-ajax-hacks");
 
 		var template = "<div class='hack-intro'>"+
-		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
+		"<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
             "<li class='hack-place'>:place:</li>"+
             "<li class='hack-date'>:fecha:</li>"+
@@ -55,4 +55,3 @@
     obtener_hackatones_buscados();
 
 })();
-
