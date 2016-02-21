@@ -23,7 +23,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^home/$', views.home),
+    url(r'^prueba/$', views.prueba),
     url(r'^hackaton/preview/$', views.HackatonList.as_view(), name='hackaton-list'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

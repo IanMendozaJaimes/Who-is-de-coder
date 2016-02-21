@@ -9,3 +9,6 @@ def home(request):
 class HackatonList(generics.ListCreateAPIView):
     queryset = Hackaton.objects.all()
     serializer_class = HackatonSerializer
+
+def prueba(request):
+    return render(request, 'prueba.html', {})
