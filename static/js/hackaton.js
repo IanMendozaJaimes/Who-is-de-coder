@@ -24,8 +24,7 @@
 				$.get(""+data.equipazo,function(data_proyecto){
 
 				})
-			}
-		})
+			})
 	}
 	obtener_proyectos();
 })();
