@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import FormView
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -30,11 +30,11 @@ def registroUser(request):
         user.email = email
         user.save()
         login(request, user)
-        assert True
         request.quees = 0
     except Exception as e:
         return redirect('/user/signup/')
-    return render(request, 'begin.html', {'nombre':user.username})
+
+    return redirect('/home')
 
 
 def loginUser(request):

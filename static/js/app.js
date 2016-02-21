@@ -6,12 +6,11 @@
 		var container = $(".append-ajax-hacks");
 
 		var template = "<div class='hack-intro'>"+
-		"<h3 class='hack-name'>:name:</h3>"+
+		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
             "<li class='hack-place'>:place:</li>"+
             "<li class='hack-date'>:fecha:</li>"+
           "</ul>"+
-          "<span class='hack-link' id=':id_hack:'>+ :name:</span>"+
         "</div>";
 
 		$.get("/hackaton/preview",function(data){
@@ -43,9 +42,5 @@
 			})
 		})
 	}
-<<<<<<< HEAD:templates/js/app.js
-
-=======
 	obtener_hackatones();
->>>>>>> origin/master:static/js/app.js
 })();

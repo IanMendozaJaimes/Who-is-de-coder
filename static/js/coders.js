@@ -1,10 +1,36 @@
 (function(){
-	console.log("Listo");
-
-
 
     var obtener_repos=function()
     {
+
+	var obtener_hackatones = function(){
+		//GET ultimos hackatones
+		var container = $(".append-ajax-hacks");
+
+		var template = "<div class='hack-intro'>"+
+		"<h3 class='hack-name'><a href='/hackaton/:id_hack:'>:name:</a></h3>"+
+          "<ul class='hack-data'>"+
+            "<li class='hack-place'>:place:</li>"+
+            "<li class='hack-date'>:fecha:</li>"+
+          "</ul>"+
+        "</div>";
+
+		$.get("/hackaton/preview",function(data){
+			data.forEach(function(item){
+				if(item.){
+
+				}
+				var binding = template.replace(":name:", item.nombreHackaton)
+				.replace(":place:", item.lugar)
+				.replace(":fecha:", item.fecha)
+				.replace(":id_hack:", item.id)
+
+				container.append($(binding).fadeIn(1500));
+			});
+		});
+	}
+
+
          var container = $(".container-github");
         //Obtener repos de github
         var template = "<div class='github-repos'>" +
@@ -15,11 +41,10 @@
             "<li class='repo-watchers'>:watchers:</li>" +
             "<li class='repo-updated'>:updated:</li>" +
             "</ul>" +
-            "<span class='repo-link' id=':id_repo:'>+ :name:</span>" +
+            "<a href=':id_repo:' class='repo-link' id=':id_repo:'>:name:</a>" +
             "</div>";
-    var user="eliothmonroy";
         $.get({
-                url: "https://api.github.com/eliothmonroy/repos",
+                url: "https://api.github.com/users/"+user+"/repos",
                 success: function (data) {
                     data.forEach(function (item) {
                         var template_bind =
@@ -36,5 +61,6 @@
             }
         );
     }
+    obtener_hackatones();
     obtener_repos();
 })();
