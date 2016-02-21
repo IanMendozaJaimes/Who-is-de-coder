@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Hackaton
-from users.models import Equipos
+from users.models import Equipos, Coder
 from rest_framework import generics
 from .serializers import HackatonSerializer
 from django.contrib.auth.decorators  import  login_required
@@ -21,7 +21,20 @@ class HackatonList(generics.ListCreateAPIView):
     serializer_class = HackatonSerializer
 
 class HackatonListUser(generics.ListCreateAPIView):
-    def get_queryset(self):
-        username = self.request.get('id')
+    serializer_class = HackatonSerializer
 
-    equipos = Equipos.objects.filter(participantes__id=id)
+
+    def get_queryset(self):
+        hackatones = []
+        equipos = []
+        username = self.kwargs.get('username')
+        try:
+            usuario = Coder.objects.get(usuario__username=username).id
+            if usuario:
+                equipos = Equipos.objects.filter(participantes__usuario=usuario)
+                for equipo in equipos:
+                    hackatones = Hackaton.objects.filter(equipos__id=equipo.id)
+        except:
+            return hackatones
+
+        return hackatones

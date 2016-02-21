@@ -28,4 +28,4 @@ class HackatonSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Hackaton
-        fields = ('id', 'nombreHackaton', 'lugar', 'fecha_format', 'paso')
+        fields = ('id', 'nombreHackaton', 'lugar', 'fecha_format', 'paso', 'descripcion')
