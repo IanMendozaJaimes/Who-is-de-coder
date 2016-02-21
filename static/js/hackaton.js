@@ -10,8 +10,6 @@
 
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
-
-			bind_hack+="<ul><p>Nuestros Patrocinadores</p>";
 			$.ajax({url:'/hackaton/'+id+'/sponsores',
 				success: function(data_sponsores){
 				data_sponsores.forEach(function(item_sponsor){
@@ -35,16 +33,22 @@
 		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo :equipo:</a></h3><h4>Proyecto :proyecto:</h4><p>Descripción: :desc:</p>";
 		$.get('/hackaton/'+id+'/equipos', function(data){
 			var bind_projecto;
+
 			data.forEach(function(item_project){
-				bind_projecto= template_projects.replace(':id:', item_project.id).replace(':equipo:', item_project.nombreEquipo).replace(':proyecto:', item_project.proyectoEquipo)
+				bind_projecto= template_projects.replace(':id:', item_project.id).replace(':equipo:', item_project.nombreEquipo).replace(':proyecto:', item_project.nombreProyecto)
 				.replace(':desc:', item_project.descripcionProyecto);
 				bind_projecto += "<ul><p>Tecnologias</p>";
 				//Tecnologias
 				$.ajax({url:"/hackaton/equipos/"+item_project.id,
-						success: function(data,txtStatus,xhr){
-							bind_projecto += "<li>"+data.nombre+"</li>"
-						bind_projecto += "</ul></div>"
-						container_projects.append($(bind_projecto).fadeIn(1200));
+					success: function(data,txtStatus,xhr){
+						$.ajax({url:"/hackaton/tech/"+item_project.id,
+						success: function(data) {
+							data.forEach(function(item){
+								bind_projecto += "<li>"+item.nombreLenguaje+"</li>"
+							});
+							bind_projecto += "</ul></div>"
+							container_projects.append($(bind_projecto).fadeIn(1200));
+						}})
 					}
 				});
 			})
