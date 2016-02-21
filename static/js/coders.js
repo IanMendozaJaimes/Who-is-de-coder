@@ -41,11 +41,10 @@
             "<li class='repo-watchers'>:watchers:</li>" +
             "<li class='repo-updated'>:updated:</li>" +
             "</ul>" +
-            "<span class='repo-link' id=':id_repo:'></span>" +
+            "<a href=':id_repo:' class='repo-link' id=':id_repo:'>:name:</a>" +
             "</div>";
-    var user="eliothmonroy";
         $.get({
-                url: "https://api.github.com/users/eliothmonroy/repos",
+                url: "https://api.github.com/users/"+user+"/repos",
                 success: function (data) {
                     data.forEach(function (item) {
                         var template_bind =
@@ -64,5 +63,4 @@
     }
     obtener_hackatones();
     obtener_repos();
-
 })();
