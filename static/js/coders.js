@@ -17,21 +17,19 @@
 
 		$.get("/hackaton/preview",function(data){
 			data.forEach(function(item){
-				if(item.){
-
-				}
+				if(item.paso!=1){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
 				.replace(":fecha:", item.fecha)
 				.replace(":id_hack:", item.id)
-
+				}
 				container.append($(binding).fadeIn(1500));
 			});
 		});
 	}
 
 
-         var container = $(".container-github");
+         var container = $(".container-apis");
         //Obtener repos de github
         var template = "<div class='github-repos'>" +
             "<h3 class='repo-name'>:name:</h3>" +
