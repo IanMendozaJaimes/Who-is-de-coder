@@ -1,7 +1,13 @@
 (function(){
     var id_reclutador;
-    id_reclutador=$('nickname').val();
+    id_reclutador=$('.nickname_val').val();
 
+    var primera_vez=function(){
+        if($('.es_reclutador').val()==1){
+            $('.register').set("hidden",true);
+        }
+    }
+    primera_vez();
 	var obtener_hackatones = function(){
 		//GET ultimos hackatones
 		var container = $(".append-ajax-hacks");

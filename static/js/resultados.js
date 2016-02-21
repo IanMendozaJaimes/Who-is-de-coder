@@ -1,6 +1,6 @@
 (function(){
     var id_reclutador;
-    id_reclutador=$('nickname').val();
+    id_reclutador=$('.nickname_val').val();
 
 	var obtener_resultados = function(){
 		//GET ultimos hackatones
