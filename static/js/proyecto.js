@@ -1,5 +1,5 @@
 (function(){
-	var id = $('#id_proyecto').val();
+	var id = $('#id_proyecto').val()
 	var github_repo;
 	//GET Proyecto
 	var container_proyecto = $('.project-info');
@@ -17,7 +17,6 @@
 		success:function(data,txtStatus,xhr){
 			data = [data]
 			data.forEach(function(item_participant){
-				debugger;
 				template_participant += "<li>"+item_participant.nickname+"</li>"
 				template_participant += "<li>"+item_participant.lugar+"</li>"
 			})

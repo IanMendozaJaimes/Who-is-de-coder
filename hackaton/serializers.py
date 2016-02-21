@@ -1,7 +1,7 @@
 import datetime
 
 from .models import Hackaton, Sponsor
-from users.models import Equipos, Lenguaje
+from users.models import Equipos, Lenguaje, Coder
 from rest_framework import serializers
 from django.utils.timezone import now
 
@@ -42,14 +42,19 @@ class SponsorsListSerializer(serializers.ModelSerializer):
         model = Sponsor
         fields = ('nombre', 'logo', 'pagina')
 
+
 class HackatonDetailSerializer(serializers.HyperlinkedModelSerializer):
     equipazo = serializers.HyperlinkedIdentityField(view_name='hackaton-equipos', lookup_field='id')
     mis_sponsors = serializers.HyperlinkedIdentityField(view_name='sponsors-list', lookup_field='id')
+    fecha_format = serializers.SerializerMethodField()
+
+    def get_fecha_format(self, obj):
+        obj.fecha_format = "%s-%s-%s" %(obj.fecha.day, obj.fecha.month, obj.fecha.year)
+        return obj.fecha_format
 
     class Meta:
         model = Hackaton
-        fields = ('fecha', 'equipazo', 'nombreHackaton', 'descripcion', 'lugar', 'mis_sponsors')
-
+        fields = ('fecha_format', 'equipazo', 'nombreHackaton', 'descripcion', 'lugar', 'mis_sponsors')
 
 
 class EquiposBusqueda(serializers.ModelSerializer):
@@ -74,3 +79,11 @@ class EquipoDetailSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Equipos
         fields = ('id', 'nombreProyecto', 'descripcionProyecto', 'nombreEquipo', 'tech', 'github', 'url')
+
+
+
+class BuscarCoder(serializers.ModelSerializer):
+
+    class Meta:
+        model = Coder
+        fields = ('participantes', 'id')

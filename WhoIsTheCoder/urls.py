@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from hackaton.views import home, TechList, EquipoDetail, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail, hackatones, EquiposBusquedaView, SponsorsList
+from hackaton.views import BuscarUsuarios, home, TechList, EquipoDetail, HackatonList, index, HackatonListUser, HackatonEquiposList, HackatonDetail, hackatones, EquiposBusquedaView, SponsorsList
 from users import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^find/(?P<parametro>[0-9a-zA-Z_-]+)/$', EquiposBusquedaView.as_view(), name='equipos-busqueda'),
     url(r'^user/resultadosView/$', views.resultadosView),
     url(r'^hackaton/proyecto/(?P<idProyecto>[0-9a-aA-Z_-]+)/$', views.proyecto),
+    url(r'^hackaton/equipos/BuscarUsuarios/(?P<id>[0-9a-aA-Z_-]+)/$', BuscarUsuarios.as_view(), name="buscar-usuarios"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

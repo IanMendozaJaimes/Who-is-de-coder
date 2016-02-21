@@ -102,54 +102,6 @@
       <primary-key columns="session_key"/>
       <index name="django_session_de54fa62" unique="true" columns="expire_date"/>
     </table>
-    <table name="hackaton_hackaton" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="nombreHackaton" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="lugar" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="fecha" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="descripcion" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
-    <table name="hackaton_hackaton_equipos" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="hackaton_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="equipos_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_equipos_1" columns="equipos_id" ref-table="users_equipos" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_equipos_2" columns="hackaton_id" ref-table="hackaton_hackaton" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="hackaton_hackaton_equipos_65e036ef" unique="true" columns="equipos_id"/>
-      <index name="hackaton_hackaton_equipos_175040a0" unique="true" columns="hackaton_id"/>
-      <index name="hackaton_hackaton_equipos_hackaton_id_63ca3fc4_uniq" unique="true" columns="hackaton_id,equipos_id"/>
-    </table>
-    <table name="hackaton_hackaton_organizadores" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="hackaton_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="organizador_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_organizadores_1" columns="organizador_id" ref-table="users_organizador" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_organizadores_2" columns="hackaton_id" ref-table="hackaton_hackaton" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="hackaton_hackaton_organizadores_5744a4fa" unique="true" columns="organizador_id"/>
-      <index name="hackaton_hackaton_organizadores_175040a0" unique="true" columns="hackaton_id"/>
-      <index name="hackaton_hackaton_organizadores_hackaton_id_fe906784_uniq" unique="true" columns="hackaton_id,organizador_id"/>
-    </table>
-    <table name="hackaton_hackaton_sponsores" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="hackaton_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="sponsor_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_sponsores_1" columns="sponsor_id" ref-table="hackaton_sponsor" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_hackaton_hackaton_sponsores_2" columns="hackaton_id" ref-table="hackaton_hackaton" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="hackaton_hackaton_sponsores_42545d36" unique="true" columns="sponsor_id"/>
-      <index name="hackaton_hackaton_sponsores_175040a0" unique="true" columns="hackaton_id"/>
-      <index name="hackaton_hackaton_sponsores_hackaton_id_242c86d9_uniq" unique="true" columns="hackaton_id,sponsor_id"/>
-    </table>
-    <table name="hackaton_sponsor" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="nombre" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="logo" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="pagina" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <primary-key columns="id"/>
-    </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
