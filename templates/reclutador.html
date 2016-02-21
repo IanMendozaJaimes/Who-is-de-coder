@@ -39,22 +39,30 @@
           </fieldset>
       </form>
       <article class="hacks">
-        <h2>Ultimos Eventos</h2>
+        <h2>Proximos Eventos</h2>
         <div class="append-ajax-hacks">
         </div>
       </article>
       <article class="hacks-buscados">
 
       </article>
-
-      <form action="" class="register" method="POST" id="busqueda">
-          <fieldset name="Busqueda" form="registro">
-
-              <input type="submit" id="Enviar" value="Let's Hack ;)">
+      <!-- Buscador -->
+      <form action="" class="register" method="get" id="busqueda">
+          <fieldset name="Busqueda_fieldset" form="registro">
+              <label for="keyword">Ingrese las keywords a buscar</label>
+              <input type="text" name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
+              <label for="Fecha_1">Seleccione la fecha</label>
+              <input type="date" name="Fecha_1" id="Fecha_1" required>
+              <label for="Fecha_2">Seleccione la fecha 2</label>
+              <input type="date" name="Fecha_2" id="Fecha_2" required>
+              <input type="submit" id="Buscar" value="Find something interesting">
           </fieldset>
       </form>
 
   </section>
+    <article>
+
+    </article>
   <footer class="begin-footer">
       <span class="enterprise">Empresa</span>
       <span class="slogan">Slogan</span>
