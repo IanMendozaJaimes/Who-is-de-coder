@@ -5,12 +5,7 @@
 		var bind_hack;
 		var id = $('#id_hack').val();
 		var container_hackaton = $('.hack-data');
-<<<<<<< HEAD
-		var template_hackatones = "<div class='hack-intro list-group'><div class='list-group-item'><h3>Nombre: :nombre:</h3><ul class='hack-data'><div class='list-group-item-text'><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
-
-=======
-		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>Descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
->>>>>>> ae14b2c847734f95e942a74cabb55aff077c9acd
+		var template_hackatones = "<div class='hack-intro list-group'><div class='list-group-item'><h3>Nombre: :nombre:</h3><ul class='hack-data'><div class='list-group-item-text'><p>Descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
 		$.get('/hackaton/'+id, function(data){
 
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
@@ -31,13 +26,15 @@
 
 		});
 
+
+
 		//Hakcton project
 		var project
 		var container_projects = $('.hackaton-proyectos');
-		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo: :equipo:</a></h3><h4>Proyecto: :proyecto:</h4><p>Descripción: :desc:</p>";
+		var template_projects = "<div class='project-div col-md-4 alert alert-dismissible alert-warning'> <h3><a href='/hackaton/proyecto/:id:'>Equipo: :equipo:</a></h3><h4>Proyecto: :proyecto:</h4><p>Descripción: :desc:</p>";
 		$.get('/hackaton/'+id+'/equipos', function(data){
 			var bind_projecto;
-
+			var design=0;
 			data.forEach(function(item_project){
 				bind_projecto= template_projects.replace(':id:', item_project.id).replace(':equipo:', item_project.nombreEquipo).replace(':proyecto:', item_project.nombreProyecto)
 				.replace(':desc:', item_project.descripcionProyecto);
@@ -45,12 +42,17 @@
 				//Tecnologias
 				$.ajax({url:"/hackaton/equipos/"+item_project.id,
 					success: function(data,txtStatus,xhr){
-						$.ajax({url:"/hackaton/tech/"+item_project.id,
+						$.ajax({url:"/hackaton/tech/"+data.id,
 						success: function(data) {
 							data.forEach(function(item){
+								debugger;
 								bind_projecto += "<li>"+item.nombreLenguaje+"</li>"
 							});
 							bind_projecto += "</ul></div>"
+							if(design==0){
+								bind_projecto += "<div class='col-md-1'></div>"
+									design =1;
+							}
 							container_projects.append($(bind_projecto).fadeIn(1200));
 						}})
 					}

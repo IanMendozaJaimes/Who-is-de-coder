@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
+  <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}"/>
   <link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.min.css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
 </head>
@@ -43,13 +44,19 @@
 </blockquote>
 
     <section class="begin-body">
+        <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
       <article class="hacks">
         <h2>Ultimos Eventos</h2>
         <div class="append-ajax-hacks">
 
         </div>
       </article>
+  </div>
       <!--Usuarios-->
+      <div class="col-md-5">
       <article class="users">
 
           <div class="panel panel-primary">
@@ -64,8 +71,9 @@
                   <!--Fin-->
                 </div>
                 <h2>Actividades</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                    Organiza hackatones
+                </p>
                 <span class="button-sec">
                   <p>
                     <a href="/user/coderView">Iniciar</a>
@@ -83,14 +91,7 @@
             <div class="panel-body">
                 <span class="user-desc">
                     <h2>Actividades</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>dasdasd</p>
-                  <ul class="users-activities">
-                    <li class="user-act"></li>
-                    <li class="user-act"></li>
-                    <li class="user-act"></li>
-                  </ul>
+                    <p>Asiste a hackatones, y enterate de los ultimos eventos, forma tu equipos directamente desde aqui.</p>
                 </span>
                 <span class="button-sec">
                   <p>
@@ -110,16 +111,7 @@
                   <!--iconos-->
                 </span>
                 <span class="user-desc">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur.</p>
-                  <ul class="users-activities">
-                    <li class="user-act"></li>
-                    <li class="user-act"></li>
-                    <li class="user-act"></li>
-                  </ul>
+                  <p>Encuentra gente brillante que te ayude a conseguir ese proyecto que tanto quieres</p>
                 </span>
                 <span class="button-sec">
                   <p>
@@ -130,6 +122,10 @@
             </div>
           </div>
       </article>
+    </div>
+    <div class="col-md-1">
+    </div>
+    </div>
     </section>
     <footer class="begin-footer">
       <span class="enterprise">Empresa</span>

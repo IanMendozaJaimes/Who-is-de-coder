@@ -17,8 +17,8 @@
 		success:function(data,txtStatus,xhr){
 			data = [data]
 			data.forEach(function(item_participant){
-				template_participant += "<li>"+item_participant.nickname+"</li>"
-				template_participant += "<li>"+item_participant.lugar+"</li>"
+				template_participant += "<li>lechugaverde</li>"
+				template_participant += "<li>agua de mar</li>"
 			})
 			template_participant += "</ul></div>"
 			container_participant.append(template_participant);
