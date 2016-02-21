@@ -42,12 +42,19 @@
 <body>
   <header class="begin-header">
      <h1>Who is the Coder?</h1>
+     {{ nombre }}
+     {{ nickname }}
+     {{ queEs }}
+     {{ esCoder }}
+     {{ github }}
+     {{ linkedin }}
   </header>
   <section class="begin-body">
       <h1>CODERS</h1>
       <form action="/user/registro" class="register" method="POST">
-          <label for="Nickname">Escriba su Nickname (Es único):</label>
-          <input type="text" name="Nickname" id="Nickname" placeholder="@SoyMuyCool" maxlength="255" required>
+          {% csrf_token %}
+          <label for="Github">Escriba su usuario en GitHub (Es único):</label>
+          <input type="text" name="Github" id="Github" placeholder="misusuario" maxlength="255" required>
           <label for="Linkedin">Nombre de usuario en Linkendin: (lo puede encontrar en )</label>
           <input type="text" name="Linkedin" id="Linkedin" placeholder="NombreDeUsuario" maxlength="255">
           <label for="Lugar">Escriba su lugar de residencia</label>

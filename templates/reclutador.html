@@ -22,6 +22,7 @@
       <h1>Reclutador</h1>
       <form action="" class="register" method="POST" id="registro">
           <fieldset name="Registro" form="registro">
+              <!--
               <label for="Presencial">Seleccione lo que mejor corresponda:</label>
               <select name="Presencial" id="Presencial" required>
                   <option value="">Seleccione una opcion</option>
@@ -34,6 +35,13 @@
                   <option value="1">Tiempo Completo</option>
                   <option value="2">Medio Tiempo</option>
               </select>
+          -->
+             <label for="idEmpresa">Escribe el nombre de tu empresa: </label>
+             <input type="text" name="empresa" id="idEmpresa" value="" placeholder="scope">
+
+             <label for="idLugarEmpresa">Escribe donde se ubica tu empresa: </label>
+             <input type="text" name="lugarEmpresa" id="idLugarEmpresa" value="" placeholder="Calle Dinamarca, ....">
+
               <input type="hidden" name="Primera" id="Primera" value="1">
               <input type="submit" id="Enviar" value="Let's Hack ;)">
           </fieldset>

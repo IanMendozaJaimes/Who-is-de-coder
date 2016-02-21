@@ -35,18 +35,19 @@ class Coder(models.Model):
     lugarVive = models.CharField(max_length=255, default="")
     primera = models.PositiveIntegerField(default=0)
 
-    remoto = 'remoto'
-    presencial = 'presencial'
+    remoto = '1'
+    presencial = '2'
     dispone = (
         (remoto, 'remoto'),
         (presencial, 'presencial')
     )
     disponibilidad = models.CharField(max_length=255, choices=dispone, default=presencial)
 
-    completo = 'completo'
+    completo = '1'
+    medio = '2'
     t = (
         (completo, 'completo'),
-        ('md', 'medio tiempo'),
+        (medio, 'medio tiempo'),
     )
     tiempo = models.CharField(max_length=255, choices=t, default=completo)
 

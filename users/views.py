@@ -50,35 +50,55 @@ def loginUser(request):
             request.session["quees"] = 0
             return redirect('/home')
         else:
-            return redirect('/login')
+            return redirect('/user/login')
+
+    else:
+        return redirect('/user/login')
 
 
 def coderView(request):
     nombre = request.user.first_name
     nickname = request.user.username
-    user = User.objects.get(username=nickname)
-    existe = Coder.objects.get(usuario=user)
-    que = request.session.get('quees')
-    print(que)
+    github = False
+    linkedin = False
+    que = 0
+    existe = None
+    user = None
     si = 0
-    if existe.primera != 0:
-        si = 1
 
-    if que == 0:
-        request.session["quees"] = 1
+    try:
+        user = User.objects.get(username=nickname)
+        existe = Coder.objects.get(usuario=user)
+        que = request.session.get('quees')
+
+        if existe.primera != 0:
+            si = 1
+            github = existe.github
+            linkedin = existe.linkedin
+
+        if que == 0:
+            request.session["quees"] = 1
+            que = 1
+
+        return render(request, 'coders.html', {'nickname':nickname, 'nombre':nombre, 'esCoder':si, 'queEs': que, 'github':github, 'linkedin':linkedin})
+    except Exception as e:
         que = 1
+        return render(request, 'coders.html', {'nickname':nickname, 'nombre':nombre, 'esCoder':si, 'queEs': que, 'github':github, 'linkedin':linkedin})
 
-    return render(request, 'coders.html', {'nickname':nickname, 'nombre':nombre, 'esCoder':si, 'queEs': que})
+
+def reclutadorView(request):
+    return render(request, 'reclutador.html', {})
+
 
 def crearCoder(request):
-    nombre = request.user.username
-    github = request.POST['githubName']
-    linkedin = request.POST['linkedinName']
-    nickname = request.POST['nicknameName']
-    lugarVive = request.POST['lugarViveName']
+    nombre = request.user.first_name
+    github = request.POST['Github']
+    linkedin = request.POST['Linkedin']
+    nickname = request.user.username
+    lugarVive = request.POST['Lugar']
     primera = 1
-    disponibilidad = request.POST['disponibilidadName']
-    tiempo = request.POST['tiempoName']
+    disponibilidad = request.POST['Presencial']
+    tiempo = request.POST['Tiempo']
 
     coder = Coder(github, linkedin, nickname, lugarVive, primera, disponibilidad, tiempo)
     coder.save()
@@ -90,3 +110,7 @@ def crearCoder(request):
 # 1 es coder
 # 2 es organizador
 # 3 es reclutador
+
+
+def crearReclutador(request):
+    nombre = request.user.username
