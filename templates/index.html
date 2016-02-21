@@ -30,9 +30,14 @@
 	<p></p>
     <div>
         <form action="" method="post">
-            <label for="Nombre">Hi (type your name here)</label>
-            <input type="text" name="Nombre" id="Nombre">
-            <button>Registrate aqui</button>
+            <fieldset>
+                <legend>Call to Action</legend>
+                <label for="Nombre">Hi (type your name here)</label>
+                <input type="text" name="Nombre" id="Nombre" required maxlength="50">
+                <label for="Email">Recibe un ebook gratis!!</label>
+                <input type="email" name="email" id="email" required maxlength="100">
+                <button>Registrate aqui</button>
+            </fieldset>
         </form>
     </div>
 	<footer>

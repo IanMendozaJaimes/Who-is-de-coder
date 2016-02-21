@@ -16,7 +16,7 @@ class Lenguaje(models.Model):
     objetivo = models.CharField(max_length=255, choices=objetivoTupla, default=indefinido)
 
     def __str__(self):
-	       return self.nombreLenguaje
+        return self.nombreLenguaje
 
 
 
@@ -27,7 +27,7 @@ class Reclutador(models.Model):
     usuario = models.OneToOneField(User)
 
     def __str__(self):
-	       return self.usuario.username
+       return self.usuario.username
 
 
 class Organizador(models.Model):
@@ -35,7 +35,7 @@ class Organizador(models.Model):
     usuario = models.OneToOneField(User)
 
     def __str__(self):
-	       return self.usuario.username
+       return self.usuario.username
 
 
 class Coder(models.Model):
@@ -63,7 +63,7 @@ class Coder(models.Model):
     usuario = models.OneToOneField(User)
 
     def __str__(self):
-	       return self.usuario.username
+       return self.usuario.username
 
 
 class Equipos(models.Model):
@@ -76,4 +76,4 @@ class Equipos(models.Model):
     url = models.URLField(max_length=255, default="")
 
     def __str__(self):
-	       return self.nombreEquipo
+        return self.nombreEquipo

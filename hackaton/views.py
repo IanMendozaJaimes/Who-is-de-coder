@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Hackaton
 from users.models import Equipos, Coder
 from rest_framework import generics
-from .serializers import HackatonSerializer
+from .serializers import HackatonSerializer, EquipoSerializer, HackatonDetailSerializer
 from django.contrib.auth.decorators  import  login_required
 # Create your views here.
 
@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html', {})
 
 def hackatones(request, idHackaton):
-    return render(request, 'hackaton.html', {'nombreHackaton': idHackaton})
+    return render(request, 'hackaton.html', {'idHackaton': idHackaton})
 
 
 class HackatonList(generics.ListCreateAPIView):
@@ -25,7 +25,6 @@ class HackatonList(generics.ListCreateAPIView):
 
 class HackatonListUser(generics.ListCreateAPIView):
     serializer_class = HackatonSerializer
-
 
     def get_queryset(self):
         hackatones = []
@@ -41,3 +40,19 @@ class HackatonListUser(generics.ListCreateAPIView):
             return hackatones
 
         return hackatones
+
+
+class HackatonEquiposList(generics.ListAPIView):
+    serializer_class = EquipoSerializer
+
+    def get_queryset(self):
+        id = self.kwargs.get('id')
+        hackaton = Hackaton.objects.get(id=id)
+        equipos = hackaton.equipos.all()
+
+        return equipos
+
+class HackatonDetail(generics.RetrieveAPIView):
+    queryset = Hackaton.objects.all()
+    serializer_class = HackatonDetailSerializer
+    lookup_field = 'id'
