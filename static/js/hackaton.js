@@ -9,10 +9,11 @@
 			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
 
 			template_hackatones+="<ul><p>Nuestros Patrocinadores</p>";
-			var i;
-			for(i=0;i<data.sponsores.length;i++){
-				template_hackatones+="<li>"+data.sponsores[i]+"</li>"
-			}
+			$.get('/hackaton/'+id+'/sponsores',function(data_sponsores){
+				data.forEach(function(){
+
+				})
+			});
 			template_hackatones+="</ul>"
 			console.log(template_hackatones);
 			container_hackaton.append(template_hackatones);
