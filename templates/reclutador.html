@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>WhoIsTheCoder | Inicio</title>
+  <title>WhoIsTheCoder | Inicio Reclutador</title>
   <meta charset="utf-8" />
   <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
   <meta name="author" content="Polycoders" />
@@ -17,11 +17,22 @@
 <body>
   <header class="begin-header">
      <h1>Who is the Coder?</h1>
+     {{ nombre }}
+     {{ nickname }}
+     {{ queEs }}
+     {{ esReclutador }}
+     {{ empresa }}
+     {{ lugarEmpresa }}
   </header>
+      <input type="hidden" class="es_coder" value="{{escoder}}"/>
+      <input type="hidden" class="que_es" value="{{queEs}}"/>
+      <input type="hidden" class="nickname_val" value="{{nickname}}"/>
   <section class="begin-body">
       <h1>Reclutador</h1>
-      <form action="" class="register" method="POST" id="registro">
-          <fieldset name="Registro" form="registro">
+      <form action="/user/crearReclutador/" name="registroR" class="register" method="POST" id="registro">
+          {% csrf_token %}
+          <!--<fieldset name="Registro" form="registro">-->
+              <!--
               <label for="Presencial">Seleccione lo que mejor corresponda:</label>
               <select name="Presencial" id="Presencial" required>
                   <option value="">Seleccione una opcion</option>
@@ -34,9 +45,16 @@
                   <option value="1">Tiempo Completo</option>
                   <option value="2">Medio Tiempo</option>
               </select>
+          -->
+             <label for="idEmpresa">Escribe el nombre de tu empresa: </label>
+             <input type="text" name="empresa" id="idEmpresa" value="" placeholder="scope">
+
+             <label for="idLugarEmpresa">Escribe donde se ubica tu empresa: </label>
+             <input type="text" name="lugarEmpresa" id="idLugarEmpresa" value="" placeholder="Calle Dinamarca, ....">
+
               <input type="hidden" name="Primera" id="Primera" value="1">
               <input type="submit" id="Enviar" value="Let's Hack ;)">
-          </fieldset>
+          <!--</fieldset>-->
       </form>
       <article class="hacks">
         <h2>Proximos Eventos</h2>
@@ -47,20 +65,20 @@
 
       </article>
       <!-- Buscador -->
-      <form action="" class="register" method="get" id="busqueda">
-          <fieldset name="Busqueda_fieldset" form="registro">
-              <label for="keyword">Ingrese las keywords a buscar</label>
-              <input type="text" name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
-              <label for="Fecha_1">Seleccione la fecha</label>
-              <input type="date" name="Fecha_1" id="Fecha_1" required>
-              <label for="Fecha_2">Seleccione la fecha 2</label>
-              <input type="date" name="Fecha_2" id="Fecha_2" required>
-              <input type="submit" id="Buscar" value="Find something interesting">
-          </fieldset>
-      </form>
-
+          <form action="/find/" class="register" method="post" id="busqueda">
+            <!--  <fieldset name="Busqueda_fieldset" form="registro">-->
+                  <label for="keyword">Ingrese las keywords a buscar</label>
+                  <input type="text"  name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
+                  <label for="Fecha_1">Seleccione la fecha</label>
+                  <input type="date" name="Fecha_1" id="Fecha_1" required>
+                  <label for="Fecha_2">Seleccione la fecha 2</label>
+                  <input type="date" name="Fecha_2" id="Fecha_2" required>
+                  <input type="submit" id="Buscar" value="Find something interesting">
+              <!--</fieldset>-->
+          </form>
   </section>
-    <article>
+  <!-- Aquí se muestran los resultados de la busqueda-->
+    <article class="resultados-busqueda">
 
     </article>
   <footer class="begin-footer">
@@ -69,6 +87,6 @@
       <span class="contact">Contacto</span>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="{%  static "js/coders.js"%}"></script>
+  <script type="text/javascript" src="{%  static "js/reclutadores.js"%}"></script>
 </body>
 </html>

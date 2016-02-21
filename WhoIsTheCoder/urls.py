@@ -32,7 +32,9 @@ urlpatterns = [
     url(r'^user/registroUser/$', views.registroUser),
     url(r'^user/loginUser/$', views.loginUser),
     url(r'^user/coderView/$', views.coderView),
+    url(r'^user/reclutadorView/$', views.reclutadorView),
     url(r'^user/crearCoder/$', views.crearCoder),
+    url(r'^user/crearReclutador/$', views.crearReclutador),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
