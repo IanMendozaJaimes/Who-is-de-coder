@@ -8,8 +8,8 @@
 		var template = "<div class='hack-intro'>"+
 		"<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
-            "<li class='hack-place'>:place:</li>"+
-            "<li class='hack-date'>:fecha:</li>"+
+            "<li class='hack-place'>Lugar: :place:</li>"+
+            "<li class='hack-date'>Fecha: :fecha:</li>"+
           "</ul>"+
         "</div>";
 
@@ -17,7 +17,7 @@
 			data.forEach(function(item){
 				var binding = template.replace(":name:", item.nombreHackaton)
 				.replace(":place:", item.lugar)
-				.replace(":fecha:", item.fecha)
+				.replace(":fecha:", item.fecha_format)
 				.replace(":id_hack:", item.id)
 
 				container.append($(binding).fadeIn(1500));

@@ -5,11 +5,11 @@
 		var bind_hack;
 		var id = $('#id_hack').val();
 		var container_hackaton = $('.hack-data');
-		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
+		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>Descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
 		$.get('/hackaton/'+id, function(data){
 
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
-			.replace(':fecha:', data.fecha).replace(':lugar:', data.lugar);
+			.replace(':fecha:', data.fecha_format).replace(':lugar:', data.lugar);
 			$.ajax({url:'/hackaton/'+id+'/sponsores',
 				success: function(data_sponsores){
 				data_sponsores.forEach(function(item_sponsor){
@@ -21,8 +21,7 @@
 					container_hackaton.append($(bind_hack));
 			}
 		});
-
-
+			
 			console.log("Final_--- " +bind_hack);
 
 		});
@@ -30,7 +29,7 @@
 		//Hakcton project
 		var project
 		var container_projects = $('.hackaton-proyectos');
-		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo :equipo:</a></h3><h4>Proyecto :proyecto:</h4><p>Descripción: :desc:</p>";
+		var template_projects = "<div class='project-div'><h3><a href='/hackaton/proyecto/:id:'>Equipo: :equipo:</a></h3><h4>Proyecto: :proyecto:</h4><p>Descripción: :desc:</p>";
 		$.get('/hackaton/'+id+'/equipos', function(data){
 			var bind_projecto;
 
