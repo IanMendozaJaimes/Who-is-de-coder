@@ -1,7 +1,5 @@
 (function(){
 
-    var obtener_repos=function()
-    {
 
 	var obtener_hackatones = function(){
 		//GET ultimos hackatones
@@ -29,6 +27,8 @@
 	}
 
 
+    var obtener_repos=function()
+    {
          var container = $(".container-apis");
         //Obtener repos de github
         var template = "<div class='github-repos'>" +
@@ -59,6 +59,21 @@
             }
         );
     }
+
+    function registro_datos(){
+        var template = ""
+
+        $.get("/hackaton/preview",function(data){
+            data.forEach(function(item){
+                if(item.primera==1){
+                    $('.register').hide();
+                    $('.info-users').append();
+                }
+            });
+        });
+    }
+
+    registro_datos();
     obtener_hackatones();
     obtener_repos();
 })();
