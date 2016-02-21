@@ -1,7 +1,7 @@
 import datetime
 
 from .models import Hackaton, Sponsor
-from users.models import Equipos
+from users.models import Equipos, Lenguaje
 from rest_framework import serializers
 from django.utils.timezone import now
 
@@ -49,3 +49,16 @@ class HackatonDetailSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Hackaton
         fields = ('fecha', 'equipazo', 'nombreHackaton', 'descripcion', 'lugar', 'mis_sponsors')
+
+
+
+class EquiposBusqueda(serializers.ModelSerializer):
+#    tecnologias = serializers.HyperlinkedRelatedField(
+#        many=True,
+#        read_only=True,
+#        view_name='equipos-busqueda'
+#    )
+
+    class Meta:
+        model = Equipos
+        fields = ('nombreEquipo', 'nombreProyecto', 'tecnologias', 'id')

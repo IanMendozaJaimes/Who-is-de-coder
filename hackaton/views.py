@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Hackaton, Sponsor
-from users.models import Equipos, Coder
+from .models import Hackaton
 from rest_framework import generics
-from .serializers import HackatonSerializer, EquipoSerializer, HackatonDetailSerializer, SponsorsListSerializer
+from users.models import Equipos, Coder, Lenguaje
+from .serializers import HackatonSerializer, EquipoSerializer, HackatonDetailSerializer, EquiposBusqueda, SponsorsListSerializer
 from django.contrib.auth.decorators  import  login_required
 # Create your views here.
 
@@ -51,6 +51,18 @@ class HackatonEquiposList(generics.ListAPIView):
         equipos = hackaton.equipos.all()
 
         return equipos
+
+
+class EquiposBusquedaView(generics.ListAPIView):
+    serializer_class = EquiposBusqueda
+
+    def get_queryset(self):
+        tecno = self.kwargs.get('parametro')
+        t = Lenguaje.objects.get(nombreLenguaje=tecno)
+        equipos = Equipos.objects.filter(tecnologias=t)
+
+        return equipos
+
 
 class HackatonDetail(generics.RetrieveAPIView):
     queryset = Hackaton.objects.all()
