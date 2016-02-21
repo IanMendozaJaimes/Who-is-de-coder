@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>WhoIsTheCoder | Inicio</title>
+  <title>WhoIsTheCoder | Inicio Reclutador</title>
   <meta charset="utf-8" />
   <meta name="description" content="Organiza un hackaton, participa como Developer o encuentra talento dentro "/>
   <meta name="author" content="Polycoders" />
@@ -18,6 +18,9 @@
   <header class="begin-header">
      <h1>Who is the Coder?</h1>
   </header>
+      <input type="hidden" class="es_coder" value="{{escoder}}"/>
+      <input type="hidden" class="que_es" value="{{queEs}}"/>
+      <input type="hidden" class="nickname_val" value="{{nickname}}"/>
   <section class="begin-body">
       <h1>Reclutador</h1>
       <form action="" class="register" method="POST" id="registro">
@@ -55,20 +58,20 @@
 
       </article>
       <!-- Buscador -->
-      <form action="" class="register" method="get" id="busqueda">
-          <fieldset name="Busqueda_fieldset" form="registro">
-              <label for="keyword">Ingrese las keywords a buscar</label>
-              <input type="text" name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
-              <label for="Fecha_1">Seleccione la fecha</label>
-              <input type="date" name="Fecha_1" id="Fecha_1" required>
-              <label for="Fecha_2">Seleccione la fecha 2</label>
-              <input type="date" name="Fecha_2" id="Fecha_2" required>
-              <input type="submit" id="Buscar" value="Find something interesting">
-          </fieldset>
-      </form>
-
+          <form action="/find/" class="register" method="post" id="busqueda">
+              <fieldset name="Busqueda_fieldset" form="registro">
+                  <label for="keyword">Ingrese las keywords a buscar</label>
+                  <input type="text"  name="keyword" id="keyword" maxlength="50" placeholder="Example: CSS, HTML" required>
+                  <label for="Fecha_1">Seleccione la fecha</label>
+                  <input type="date" name="Fecha_1" id="Fecha_1" required>
+                  <label for="Fecha_2">Seleccione la fecha 2</label>
+                  <input type="date" name="Fecha_2" id="Fecha_2" required>
+                  <input type="submit" id="Buscar" value="Find something interesting">
+              </fieldset>
+          </form>
   </section>
-    <article>
+  <!-- Aquí se muestran los resultados de la busqueda-->
+    <article class="resultados-busqueda">
 
     </article>
   <footer class="begin-footer">
@@ -77,6 +80,6 @@
       <span class="contact">Contacto</span>
   </footer>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script type="text/javascript" src="{%  static "js/coders.js"%}"></script>
+  <script type="text/javascript" src="{%  static "js/reclutadores.js"%}"></script>
 </body>
 </html>
