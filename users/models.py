@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 #from hackaton.models import Hackaton
-
+# sury <3
 
 class Lenguaje(models.Model):
     nombreLenguaje = models.CharField(max_length=255)
@@ -59,3 +59,4 @@ class Equipos(models.Model):
     nombreProyecto = models.CharField(max_length=255)
     descripcionProyecto = models.TextField(default="None")
     participantes = models.ManyToManyField(Coder)
+    tecnologias = models.ManyToManyField(Lenguaje)
