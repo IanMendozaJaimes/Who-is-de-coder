@@ -72,6 +72,8 @@ class Equipos(models.Model):
     descripcionProyecto = models.TextField(default="None")
     participantes = models.ManyToManyField(Coder)
     tecnologias = models.ManyToManyField(Lenguaje)
+    github = models.URLField(max_length=255, default="")
+    url = models.URLField(max_length=255, default="")
 
     def __str__(self):
 	       return self.nombreEquipo
