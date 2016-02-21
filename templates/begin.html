@@ -10,105 +10,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}"/>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"/>
   <link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.min.css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'/>
-  <link rel="stylesheet" type="text/css" href="{%  static "css/app.css"%}">
 </head>
 <body>
-    <header class="begin-header">
-      <h1>Who is the Coder?</h1>
-    </header>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Who is The Coder?</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">"Change the Way you Hack"<span class="sr-only">(current)</span></a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">POLICODERS</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<blockquote>
+  <p>"Organiza, asiste y conoce gente increible"</p>
+  <small> <cite title="Source Title">HackForEquality</cite></small>
+</blockquote>
+
     <section class="begin-body">
       <article class="hacks">
         <h2>Ultimos Eventos</h2>
         <div class="append-ajax-hacks">
+
         </div>
       </article>
       <!--Usuarios-->
       <article class="users">
-        <div class="users-selection">
-          <h2>Perfil</h2>
-            <div class="user-facebook">
-              <!--Inicio-->
-              <h4 class="user-name">{{nombre}}</h4>
-              <p class="user-mail">{{email}}</p>
-              <!--Fin-->
-            </div>
-          <h2>Actividades</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.</p>
 
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Organizador</h2>
+            </div>
+            <div class="panel-body">
+                <div class="user-facebook">
+                  <!--Inicio-->
+                  <h4 class="user-name">{{nombre}}</h4>
+                  <p class="user-mail">{{email}}</p>
+                  <!--Fin-->
+                </div>
+                <h2>Actividades</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+                <span class="button-sec">
+                  <p>
+                    <a href="/user/coderView">Iniciar</a>
+                  </p>
+                </span>
+            </div>
+          </div>
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+            <div class="user-coder">
+              <h2 class="panel-title">Developer</h2>
+            </div>
         </div>
-        <div class="user-coder">
-          <h2>Developer</h2>
-          <span>
-            <!--iconos-->
-          </span>
-          <span class="user-desc">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
-            <ul class="users-activities">
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-            </ul>
-          </span>
-          <span class="button-sec">
-            <p>
-              <a href="/user/coderView">Iniciar</a>
-            </p>
-          </span>
-        </div>
-        <div class="user-recruiter">
-          <h2>Reclutador</h2>
-          <span>
-            <!--iconos-->
-          </span>
-          <span class="user-desc">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
-            <ul class="users-activities">
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-            </ul>
-          </span>
-          <span class="button-sec">
-            <p>
-              <a href="/user/reclutadorView">Iniciar</a>
-            </p>
-          </span>
-        </div>
-        <div class="user-organizer">
-          <h2>Organizador</h2>
-          <span>
-            <!--iconos-->
-          </span>
-          <span class="user-desc">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur.</p>
-            <ul class="users-activities">
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-              <li class="user-act"></li>
-            </ul>
-          </span>
-          <span class="button-sec">
-            <p>
-              <a href="/user/organizadorView">Iniciar</a>
-            </p>
-          </span>
-        </div>
+            <div class="panel-body">
+                <span class="user-desc">
+                    <h2>Actividades</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>dasdasd</p>
+                  <ul class="users-activities">
+                    <li class="user-act"></li>
+                    <li class="user-act"></li>
+                    <li class="user-act"></li>
+                  </ul>
+                </span>
+                <span class="button-sec">
+                  <p>
+                    <a href="/user/coderView">Iniciar</a>
+                  </p>
+                </span>
+            </div>
+          </div>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h2 class="panel-title">Reclutador</h2>
+            </div>
+            <div class="panel-body">
+                <div class="user-recruiter">
+                <span>
+                  <!--iconos-->
+                </span>
+                <span class="user-desc">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur.</p>
+                  <ul class="users-activities">
+                    <li class="user-act"></li>
+                    <li class="user-act"></li>
+                    <li class="user-act"></li>
+                  </ul>
+                </span>
+                <span class="button-sec">
+                  <p>
+                    <a href="/user/reclutadorView">Iniciar</a>
+                  </p>
+                </span>
+            </div>
+            </div>
+          </div>
       </article>
     </section>
     <footer class="begin-footer">

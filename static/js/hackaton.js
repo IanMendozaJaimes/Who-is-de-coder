@@ -5,7 +5,8 @@
 		var bind_hack;
 		var id = $('#id_hack').val();
 		var container_hackaton = $('.hack-data');
-		var template_hackatones = "<h3>Nombre: :nombre:</h3><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
+		var template_hackatones = "<div class='hack-intro list-group'><div class='list-group-item'><h3>Nombre: :nombre:</h3><ul class='hack-data'><div class='list-group-item-text'><p>descripcion: :descripcion:</p><p>Fecha: :fecha:</p><p>Lugar: :lugar:</p><ul><p>Nuestros Patrocinadores</p>";
+
 		$.get('/hackaton/'+id, function(data){
 
 			bind_hack=template_hackatones.replace(':nombre:',data.nombreHackaton).replace(':descripcion:', data.descripcion)
@@ -16,7 +17,7 @@
 				success: function(data_sponsores){
 				data_sponsores.forEach(function(item_sponsor){
 					bind_hack += "<li>"+item_sponsor.nombre+"</li><li><img src='"+item_sponsor.logo+"'</li>"+
-					"<li><a href='"+item_sponsor.pagina+"'>"+item_sponsor.pagina+"</a></li>";
+					"<li><a href='"+item_sponsor.pagina+"'>"+item_sponsor.pagina+"</a></li></div></ul></div></div>";
 					console.log("Este es el maldto_--- " +bind_hack);
 				});
 					bind_hack+="</ul>";

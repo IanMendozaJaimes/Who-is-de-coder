@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,42 +19,44 @@
 	<header>
 	<h1><center>WHO IS THE CODER?</center></h1>
 
-</header>
-
-<br></br>
-<br></br>
-<form method="post" action="/user/registroUser/">
+<form class="form-horizontal" method="post" action="/user/registroUser/">
     {% csrf_token %}
-<center>
-</b>
-
-<p>
-<font size="2" face="verdana" color="black" > Nickname: </font>
-<br></br>
-<input type="text" name="nickName">
-</p>
-
-<p>
-<font size="2" face="verdana" color="black" > Nombre: </font>
-<br></br>
-<input type="text" name="nombreName">
-</p>
-
-<font size="2" face="verdana" color="black" > Email: </font>
-<br>
-</br>
-<input type="email" name="emailName" value="">
-<br> </br>
-
-<font size="2" face="verdana" color="black" > Password: </font>
-<br>
-</br>
-<input type="password" name="contraName">
-<br> </br>
-
-  <input type="submit">
-</center>
+  <fieldset>
+    <legend>    ¡Resgitrate ahora!</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Nickname</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="nickName" placeholder="Nombre Avatar"  name="nickName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Escribe tu nombre verdadero</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="nombreName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="email" class="form-control" id="inputEmail" name="emailName"  placeholder="corroelectronico@whoisthecoder.com">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputEmail" placeholder="Email" name="contraName">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Borrar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </fieldset>
 </form>
+
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script type="text/javascript" src="https://bootswatch.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="{%  static "js/proyecto.js"%}"></script>

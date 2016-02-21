@@ -1,8 +1,7 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
-	background: #ddd url(../images/cream_pixels.png) repeat top left;
-}
+	background: white;
 .begin-header{
 	position:absolute;
 	top: 0;
@@ -30,7 +29,7 @@ body{
 .begin-body .users{
 	display: inline-block;
 	width: 60%;
-	background-color: white; 
+	background-color: white;
 }
 .none{
 	display: none;

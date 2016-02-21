@@ -5,13 +5,14 @@
 		//GET ultimos hackatones
 		var container = $(".append-ajax-hacks");
 
-		var template = "<div class='hack-intro'>"+
-		"<h3 class='hack-name'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
+		var template = "<div class='hack-intro list-group'><div class='list-group-item'>"+
+		"<h3 class='hack-name list-group-item-heading'><a href='/hackatones/:id_hack:'>:name:</a></h3>"+
           "<ul class='hack-data'>"+
-            "<li class='hack-place'>:place:</li>"+
-            "<li class='hack-date'>:fecha:</li>"+
+            "<div class='list-group-item-text'><li class='hack-place'>:place:</li>"+
+            "<li class='hack-date'>:fecha:</li></div>"+
           "</ul>"+
-        "</div>";
+        "</div></div>";
+
 
 		$.get("/hackaton/preview",function(data){
 			data.forEach(function(item){

@@ -16,13 +16,33 @@
   <link rel="stylesheet" type="text/css" href="{%  static "css/app.css"%}">
   </head>
 <body>
-  <header class="begin-header">
-    <h1>Who is the Coder?</h1>
-  </header>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Who is The Coder?</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">"Change the Way you Hack"<span class="sr-only">(current)</span></a></li>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">POLICODERS</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   <section class="begin-body">
     <div class="hack-data">
       <input type="hidden" value="{{idHackaton}}" id="id_hack"/>
-      <!--jaxa-->
+      <!--Ajax-->
     </div>
     <div class="hackaton-proyectos">
       <!--Ajax -->
